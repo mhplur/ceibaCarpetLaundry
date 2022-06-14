@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UtilTime.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.cita.servicio</a> &gt; <span class="el_source">UtilTime.java</span></div><h1>UtilTime.java</h1><pre class="source lang-java linenums">package com.ceiba.cita.servicio;
+
+import java.time.LocalTime;
+
+<span class="nc" id="L5">public class UtilTime {</span>
+
+<span class="nc" id="L7">    private static final LocalTime CONS_MIDNIGHT = LocalTime.parse(&quot;23:59:59&quot;);</span>
+<span class="nc" id="L8">    private static final LocalTime CONS_DAY = LocalTime.parse(&quot;00:00:00&quot;);</span>
+<span class="nc" id="L9">    private static LocalTime CONS_START_DAY = LocalTime.parse(&quot;06:00:00&quot;);</span>
+<span class="nc" id="L10">    private static LocalTime CONS_END_DAY = LocalTime.parse(&quot;18:00:00&quot;);</span>
+<span class="nc" id="L11">    private static LocalTime CONS_START_NIGHT = LocalTime.parse(&quot;20:00:00&quot;);</span>
+<span class="nc" id="L12">    private static LocalTime CONS_END_NIGHT = LocalTime.parse(&quot;04:00:00&quot;);</span>
+
+    public static boolean checkAllRangeTime(LocalTime dateTime) {
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        return checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY) ||</span>
+<span class="nc bnc" id="L16" title="All 2 branches missed.">                checkRangeNightTime(dateTime, CONS_START_NIGHT, CONS_END_NIGHT) ?</span>
+<span class="nc" id="L17">                true : false;</span>
+    }
+
+    private static boolean checkRangeDayTime(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
+<span class="nc" id="L21">        return checkRange(dateTime, startRange, endRange);</span>
+    }
+
+    private static boolean checkRangeNightTime(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
+<span class="nc" id="L25">        boolean isNightSchedule = checkRange(dateTime, startRange, CONS_MIDNIGHT);</span>
+<span class="nc" id="L26">        boolean isDaySchedule = checkRange(dateTime, CONS_DAY, endRange);</span>
+<span class="nc bnc" id="L27" title="All 4 branches missed.">        return isNightSchedule || isDaySchedule;</span>
+    }
+
+    private static boolean checkRange(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
+<span class="nc" id="L31">        int startValue = dateTime.compareTo(startRange);</span>
+<span class="nc" id="L32">        int endValue = dateTime.compareTo(endRange);</span>
+
+<span class="nc bnc" id="L34" title="All 8 branches missed.">        return (startValue == 1 || startValue == 0) &amp;&amp; (endValue == -1 || endValue == 0) ?</span>
+<span class="nc" id="L35">                true : false;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

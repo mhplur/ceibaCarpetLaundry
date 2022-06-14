@@ -23,17 +23,17 @@ public class FabricaSolicitudFacturar {
 <span class="fc" id="L23">    }</span>
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
-<span class="nc" id="L26">        return new SolicitudFacturar(repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),</span>
-<span class="nc" id="L27">                obtenerProductos(comandoSolicitudFacturar.getComandoProductosFacturar())</span>
+<span class="fc" id="L26">        return new SolicitudFacturar(repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),</span>
+<span class="fc" id="L27">                obtenerProductos(comandoSolicitudFacturar.getComandoProductosFacturar())</span>
         );
     }
 
     private List&lt;ProductoFacturar&gt; obtenerProductos(List&lt;ComandoProductoFacturar&gt; comandoProductosFacturar) {
-<span class="nc" id="L32">        return comandoProductosFacturar.stream().map(comandoProducto -&gt;</span>
-<span class="nc" id="L33">                        ProductoFacturar.crear(</span>
-<span class="nc" id="L34">                                comandoProducto.getCantidad(),</span>
-<span class="nc" id="L35">                                repositorioProducto.obtener(comandoProducto.getIdProducto())))</span>
-<span class="nc" id="L36">                .collect(Collectors.toList());</span>
+<span class="fc" id="L32">        return comandoProductosFacturar.stream().map(comandoProducto -&gt;</span>
+<span class="fc" id="L33">                        ProductoFacturar.crear(</span>
+<span class="fc" id="L34">                                comandoProducto.getCantidad(),</span>
+<span class="fc" id="L35">                                repositorioProducto.obtener(comandoProducto.getIdProducto())))</span>
+<span class="fc" id="L36">                .collect(Collectors.toList());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

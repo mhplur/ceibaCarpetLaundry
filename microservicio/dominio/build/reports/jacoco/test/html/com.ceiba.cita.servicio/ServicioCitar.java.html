@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServicioCitar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.cita.servicio</a> &gt; <span class="el_source">ServicioCitar.java</span></div><h1>ServicioCitar.java</h1><pre class="source lang-java linenums">package com.ceiba.cita.servicio;
+
+import com.ceiba.cita.modelo.entidad.Cita;
+import com.ceiba.cita.modelo.entidad.HorarioPrecio;
+import com.ceiba.cita.modelo.entidad.SolicitarCita;
+import com.ceiba.cita.puerto.RepositorioCita;
+
+import java.util.List;
+
+public class ServicioCitar {
+
+    private static final String CONS_HORARIO_DIA = &quot;DIA&quot;;
+    private static final String CONS_HORARIO_NOCHE = &quot;NOCHE&quot;;
+
+    private final RepositorioCita repositorioCita;
+
+<span class="nc" id="L17">    public ServicioCitar(RepositorioCita repositorioCita) {</span>
+<span class="nc" id="L18">        this.repositorioCita = repositorioCita;</span>
+<span class="nc" id="L19">    }</span>
+
+    public Long ejecutar(SolicitarCita solicitarCita) {
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        if (UtilTime.checkAllRangeTime(solicitarCita.getHoraCita())) {</span>
+<span class="nc" id="L23">            var cita = Cita.crear(solicitarCita);</span>
+<span class="nc" id="L24">            cita.setEstado(1);</span>
+<span class="nc" id="L25">            cita.setCosto(getCost(solicitarCita));</span>
+<span class="nc" id="L26">            return repositorioCita.guardar(cita);</span>
+        }
+<span class="nc" id="L28">        return 0l;</span>
+    }
+
+    private Double getCost(SolicitarCita solicitarCita) {
+<span class="nc" id="L32">        List&lt;Cita&gt; citas = repositorioCita.obtenerTodasActivas();</span>
+<span class="nc" id="L33">        boolean existeCitaPrevia = false;</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (Cita cita : citas) {</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">            if (cita.getClient().getId() == solicitarCita.getCliente().getId()) {</span>
+<span class="nc" id="L36">                existeCitaPrevia = true;</span>
+<span class="nc" id="L37">                break;</span>
+            }
+<span class="nc" id="L39">        }</span>
+
+<span class="nc" id="L41">        String horario = solicitarCita.getHorario();</span>
+<span class="nc" id="L42">        Integer costoPorMetroCuadrado = solicitarCita.getTarifa().getCostoPorMetroCuadrado();</span>
+        Double cost;
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (existeCitaPrevia) {</span>
+<span class="nc" id="L45">            cost = getCostDiscount(costoPorMetroCuadrado, horario);</span>
+        } else {
+<span class="nc" id="L47">            cost = getCostNormal(costoPorMetroCuadrado, horario);</span>
+        }
+
+<span class="nc" id="L50">        return cost;</span>
+    }
+
+
+    private Double getCostDiscount(Integer costoPorMetroCuadrado, String horario) {
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        if (horario.equals(CONS_HORARIO_DIA)) {</span>
+<span class="nc" id="L56">            return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.DIA_DESCUENTO.getPorcentaje());</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        } else if (horario.equals(CONS_HORARIO_NOCHE)) {</span>
+<span class="nc" id="L58">            return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.NOCHE_DESCUENTO.getPorcentaje()) + HorarioPrecio.NOCHE_DESCUENTO.getCostoAdicional();</span>
+        }
+<span class="nc" id="L60">        return 0.0;</span>
+    }
+
+    private Double getCostNormal(Integer squareMeterRate, String horario) {
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (horario.equals(CONS_HORARIO_DIA)) {</span>
+<span class="nc" id="L65">            return Double.valueOf(squareMeterRate);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        } else if (horario.equals(CONS_HORARIO_NOCHE)) {</span>
+<span class="nc" id="L67">            return Double.valueOf(squareMeterRate + HorarioPrecio.NOCHE.getCostoAdicional());</span>
+        }
+<span class="nc" id="L69">        return 0.0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

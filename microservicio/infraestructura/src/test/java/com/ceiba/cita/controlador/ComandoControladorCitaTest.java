@@ -16,6 +16,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.time.LocalDate;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -48,7 +50,7 @@ public class ComandoControladorCitaTest {
 
         var citaGuardada = repositorioCita.obtenerPorId(respuesta.getValor());
 
-        //TODO ELABORAR MAS PRUEBAS
+        Assertions.assertEquals(LocalDate.parse("2022-06-14"), citaGuardada.getFechaCita());
     }
 
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.factura.controlador.ComandoControladorFacturaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-14T21:10:08" hostname="DESKTOP-SJD26V0" time="2.241">
+  <properties/>
+  <testcase name="crearFacturaExitosa()" classname="com.ceiba.factura.controlador.ComandoControladorFacturaTest" time="0.272"/>
+  <testcase name="anularFacturaExitosa()" classname="com.ceiba.factura.controlador.ComandoControladorFacturaTest" time="0.236"/>
+  <system-out><![CDATA[2022-06-14 16:10:07.158  INFO 6772 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.factura.controlador.ComandoControladorFacturaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-06-14 16:10:07.168  INFO 6772 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-06-14 16:10:07.168  INFO 6772 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@531e462e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@8077762, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@330f04ba, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4430e62d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@65bee7b3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56b13001, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1d50d4b9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5e1258b0, org.springframework.test.context.event.EventPublishingTestExecutionListener@4c03afbe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@136dbf07, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@80344cf, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@44184aa7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@15b773c5, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6bdc63f3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@79eb677b]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.7)
+
+2022-06-14 16:10:07.207  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : Starting ComandoControladorFacturaTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 6772 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-06-14 16:10:07.207  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : No active profile set, falling back to 1 default profile: "default"
+2022-06-14 16:10:07.478  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-14 16:10:07.480  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-14 16:10:07.702  INFO 6772 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-14 16:10:07.712  INFO 6772 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-14 16:10:07.722  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.005s)
+2022-06-14 16:10:07.732  INFO 6772 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2022-06-14 16:10:07.750  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-06-14 16:10:07.762  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-06-14 16:10:07.793  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - data
+2022-06-14 16:10:07.823  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.079s)
+2022-06-14 16:10:08.799  INFO 6772 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-14 16:10:08.799  INFO 6772 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-14 16:10:08.799  INFO 6772 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-06-14 16:10:08.829  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : Started ComandoControladorFacturaTest in 1.659 seconds (JVM running for 32.579)
+2022-06-14 16:10:08.898  INFO 6772 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-14 16:10:09.110  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-14 16:10:09.112  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.7)
+
+2022-06-14 16:10:09.180  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : Starting ComandoControladorFacturaTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 6772 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-06-14 16:10:09.180  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : No active profile set, falling back to 1 default profile: "default"
+2022-06-14 16:10:09.474  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-14 16:10:09.474  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-14 16:10:09.674  INFO 6772 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-14 16:10:09.690  INFO 6772 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-14 16:10:09.690  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.005s)
+2022-06-14 16:10:09.705  INFO 6772 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2022-06-14 16:10:09.712  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-06-14 16:10:09.728  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-06-14 16:10:09.759  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - data
+2022-06-14 16:10:09.790  INFO 6772 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.081s)
+2022-06-14 16:10:10.790  INFO 6772 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-14 16:10:10.790  INFO 6772 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-14 16:10:10.790  INFO 6772 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-06-14 16:10:10.821  INFO 6772 --- [    Test worker] c.c.f.c.ComandoControladorFacturaTest    : Started ComandoControladorFacturaTest in 1.712 seconds (JVM running for 34.577)
+2022-06-14 16:10:10.875  INFO 6772 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-14 16:10:11.075  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-14 16:10:11.075  INFO 6772 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

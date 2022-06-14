@@ -19,7 +19,7 @@ public class TarifaTest {
 
         Assertions.assertEquals(1l, tarifa.getId());
         Assertions.assertEquals("VAPOR O AGUA CALIENTE", tarifa.getNombre());
-        Assertions.assertEquals(true, tarifa.getLimpiezaProfunda());
+        Assertions.assertEquals(1, tarifa.getLimpiezaProfunda());
         Assertions.assertEquals(15, tarifa.getCostoPorMetroCuadrado());
         Assertions.assertEquals(24, tarifa.getTiempoHoraSecado());
     }
