@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorFactura.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.factura.controlador</a> &gt; <span class="el_source">ComandoControladorFactura.java</span></div><h1>ComandoControladorFactura.java</h1><pre class="source lang-java linenums">package com.ceiba.factura.controlador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.factura.comando.ComandoAnular;
+import com.ceiba.factura.comando.ComandoSolicitudFacturar;
+import com.ceiba.factura.comando.manejador.ManejadorAnular;
+import com.ceiba.factura.comando.manejador.ManejadorFacturar;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/factura&quot;)
+@Tag(name = &quot;Controlador comando factura&quot;)
+public class ComandoControladorFactura {
+
+    private final ManejadorFacturar manejadorFacturar;
+    private final ManejadorAnular manejadorAnular;
+
+<span class="fc" id="L21">    public ComandoControladorFactura(ManejadorFacturar manejadorFacturar, ManejadorAnular manejadorAnular) {</span>
+<span class="fc" id="L22">        this.manejadorFacturar = manejadorFacturar;</span>
+<span class="fc" id="L23">        this.manejadorAnular = manejadorAnular;</span>
+<span class="fc" id="L24">    }</span>
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    @Operation(summary = &quot;Facturar&quot;, description = &quot;Metodo utilizado para crear una nueva factura&quot;)
+    public ComandoRespuesta&lt;Long&gt; facturar(@RequestBody ComandoSolicitudFacturar comandoSolicitudFacturar) {
+<span class="nc" id="L30">        return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);</span>
+    }
+
+    @PostMapping(&quot;anular/{id-factura}&quot;)
+    @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para anular una nueva factura&quot;)
+    public void anular(@PathVariable(&quot;id-factura&quot;) Long idFactura) {
+<span class="nc" id="L36">        this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));</span>
+<span class="nc" id="L37">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoFactura.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.factura.adaptador.repositorio</a> &gt; <span class="el_source">MapeoFactura.java</span></div><h1>MapeoFactura.java</h1><pre class="source lang-java linenums">package com.ceiba.factura.adaptador.repositorio;
+
+import com.ceiba.cliente.puerto.RepositorioCliente;
+import com.ceiba.factura.modelo.entidad.EstadoFactura;
+import com.ceiba.factura.modelo.entidad.Factura;
+import com.ceiba.factura.puerto.repositorio.RepositorioProductoFacturar;
+import com.ceiba.infraestructura.jdbc.MapperResult;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+@Component
+public class MapeoFactura implements RowMapper&lt;Factura&gt;, MapperResult {
+
+    private final RepositorioCliente repositorioCliente;
+    private final RepositorioProductoFacturar repositorioProductoFacturar;
+
+<span class="fc" id="L20">    public MapeoFactura(RepositorioCliente repositorioCliente, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
+<span class="fc" id="L21">        this.repositorioCliente = repositorioCliente;</span>
+<span class="fc" id="L22">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public Factura mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+<span class="nc" id="L27">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L28">        var idCliente = resultSet.getLong(&quot;id_cliente&quot;);</span>
+<span class="nc" id="L29">        var valorTotal = resultSet.getBigDecimal(&quot;valor_total&quot;);</span>
+<span class="nc" id="L30">        var estado = EstadoFactura.valueOf(resultSet.getString(&quot;estado&quot;));</span>
+
+<span class="nc" id="L32">        return Factura.reconstruir(id, repositorioCliente.obtener(idCliente),</span>
+<span class="nc" id="L33">                repositorioProductoFacturar.obtenerPorFactura(id), valorTotal, estado);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

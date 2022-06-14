@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioFacturaMysql.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.factura.adaptador.repositorio</a> &gt; <span class="el_source">RepositorioFacturaMysql.java</span></div><h1>RepositorioFacturaMysql.java</h1><pre class="source lang-java linenums">package com.ceiba.factura.adaptador.repositorio;
+
+import com.ceiba.factura.modelo.entidad.Factura;
+import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
+import com.ceiba.factura.puerto.repositorio.RepositorioProductoFacturar;
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RepositorioFacturaMysql implements RepositorioFactura {
+
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+
+    private final MapeoFactura mapeoFactura;
+    private final RepositorioProductoFacturar repositorioProductoFacturar;
+
+    @SqlStatement(namespace = &quot;factura&quot;, value = &quot;crear&quot;)
+    private static String sqlCrear;
+
+    @SqlStatement(namespace = &quot;factura&quot;, value = &quot;obtenerporid&quot;)
+    private static String sqlObtenerPorId;
+
+    @SqlStatement(namespace = &quot;factura&quot;, value = &quot;actualizarestado&quot;)
+    private static String sqlActualizarEstado;
+
+<span class="fc" id="L29">    public RepositorioFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFactura mapeoFactura, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">        this.mapeoFactura = mapeoFactura;</span>
+<span class="fc" id="L32">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
+<span class="fc" id="L33">    }</span>
+
+    @Override
+    public Long guardar(Factura factura) {
+<span class="nc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L38">        paramSource.addValue(&quot;id_cliente&quot;, factura.getCliente().getId());</span>
+<span class="nc" id="L39">        paramSource.addValue(&quot;valor_total&quot;, factura.getValorTotal());</span>
+<span class="nc" id="L40">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().name());</span>
+<span class="nc" id="L41">        Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="nc" id="L42">        repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);</span>
+<span class="nc" id="L43">        return idFacturaGuardada;</span>
+    }
+
+    @Override
+    public Factura obtener(Long id) {
+<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L50">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L51">                .queryForObject(sqlObtenerPorId, paramSource, mapeoFactura));</span>
+    }
+
+    @Override
+    public void actualizarEstado(Factura factura) {
+<span class="nc" id="L56">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L57">        paramSource.addValue(&quot;id&quot;, factura.getId());</span>
+<span class="nc" id="L58">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().toString());</span>
+<span class="nc" id="L59">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
+
+<span class="nc" id="L61">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

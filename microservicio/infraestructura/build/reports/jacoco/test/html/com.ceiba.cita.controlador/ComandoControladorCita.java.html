@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorCita.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.cita.controlador</a> &gt; <span class="el_source">ComandoControladorCita.java</span></div><h1>ComandoControladorCita.java</h1><pre class="source lang-java linenums">package com.ceiba.cita.controlador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.cita.ComandoCancelar;
+import com.ceiba.cita.ComandoSolicitarCita;
+import com.ceiba.cita.comando.manejador.ManejadorCancelar;
+import com.ceiba.cita.comando.manejador.ManejadorCitar;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/cita&quot;)
+@Tag(name = &quot;Controlador comando cita&quot;)
+public class ComandoControladorCita {
+
+    private final ManejadorCancelar manejadorCancelar;
+
+    private final ManejadorCitar manejadorCitar;
+
+<span class="fc" id="L22">    public ComandoControladorCita(ManejadorCancelar manejadorCancelar, ManejadorCitar manejadorCitar) {</span>
+<span class="fc" id="L23">        this.manejadorCancelar = manejadorCancelar;</span>
+<span class="fc" id="L24">        this.manejadorCitar = manejadorCitar;</span>
+<span class="fc" id="L25">    }</span>
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    @Operation(summary = &quot;Tomar cita&quot;, description = &quot;Metodo utilizado para poder tomar una cita&quot;)
+    public ComandoRespuesta&lt;Long&gt; tomarCita(@RequestBody ComandoSolicitarCita comandoSolicitarCita) {
+<span class="fc" id="L31">        return this.manejadorCitar.ejecutar(comandoSolicitarCita);</span>
+    }
+
+    @PostMapping(&quot;cancelar/{id-cita}&quot;)
+    @Operation(summary = &quot;Cancelar&quot;, description = &quot;Metodo utilizado para aunlar una cita&quot;)
+    public void cancelar(@PathVariable(&quot;id-cita&quot;) Long idCita) {
+<span class="nc" id="L37">        this.manejadorCancelar.ejecutar(new ComandoCancelar(idCita));</span>
+<span class="nc" id="L38">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

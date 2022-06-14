@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConsultaControladorTarifa.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.tarifa.controlador</a> &gt; <span class="el_source">ConsultaControladorTarifa.java</span></div><h1>ConsultaControladorTarifa.java</h1><pre class="source lang-java linenums">package com.ceiba.tarifa.controlador;
+
+import com.ceiba.tarifa.consulta.ManejadorConsultaTarifaPorCodigo;
+import com.ceiba.tarifa.consulta.ManejadorConsultaTarifaPorId;
+import com.ceiba.tarifa.entidad.Tarifa;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(&quot;/tarifa&quot;)
+@Tag(name = &quot;Controlador consulta tarifa&quot;)
+public class ConsultaControladorTarifa {
+
+    private final ManejadorConsultaTarifaPorCodigo manejadorConsultaTarifaPorCodigo;
+
+    private final ManejadorConsultaTarifaPorId manejadorConsultaTarifaPorId;
+
+    private ConsultaControladorTarifa(ManejadorConsultaTarifaPorCodigo manejadorConsultaTarifaPorCodigo,
+<span class="fc" id="L23">                                      ManejadorConsultaTarifaPorId manejadorConsultaTarifaPorId) {</span>
+<span class="fc" id="L24">        this.manejadorConsultaTarifaPorCodigo = manejadorConsultaTarifaPorCodigo;</span>
+<span class="fc" id="L25">        this.manejadorConsultaTarifaPorId = manejadorConsultaTarifaPorId;</span>
+<span class="fc" id="L26">    }</span>
+
+    @GetMapping(&quot;obtenerPorCodigo/{codigo}&quot;)
+    @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Tarifa por su codigo&quot;)
+    public Tarifa obtenerPorCodigo(@PathVariable(&quot;codigo&quot;) String codigo) {
+<span class="nc" id="L31">        return this.manejadorConsultaTarifaPorCodigo.ejecutar(codigo);</span>
+    }
+
+    @GetMapping(&quot;obtenerPorId/{id}&quot;)
+    @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Tarifa por su id&quot;)
+    public Tarifa obtenerPorId(@PathVariable(&quot;id&quot;) Long id) {
+<span class="nc" id="L37">        return this.manejadorConsultaTarifaPorId.ejecutar(id);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

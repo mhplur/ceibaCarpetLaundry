@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioClientH2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.client.adaptador.repositorio</a> &gt; <span class="el_source">RepositorioClientH2.java</span></div><h1>RepositorioClientH2.java</h1><pre class="source lang-java linenums">package com.ceiba.client.adaptador.repositorio;
+
+import com.ceiba.client.entidad.Client;
+import com.ceiba.client.puerto.RepositorioClient;
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class RepositorioClientH2 implements RepositorioClient {
+    //TODO OK
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+
+    private final MapeoClient mapeoClient;
+
+    @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenertodas&quot;)
+    private String sqlObtenerTodas;
+
+    @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenerporidentificacionpersonal&quot;)
+    private String sqlObtenerPorIdentificacionPersonal;
+
+    @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenerporid&quot;)
+    private String sqlObtenerPorId;
+
+<span class="fc" id="L29">    public RepositorioClientH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoClient mapeoClient) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">        this.mapeoClient = mapeoClient;</span>
+<span class="fc" id="L32">    }</span>
+
+    @Override
+    public List&lt;Client&gt; obtenerTodos() {
+<span class="nc" id="L36">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L37">                .query(sqlObtenerTodas, mapeoClient);</span>
+    }
+
+    @Override
+    public Client obtenerPorIdentificacionPersonal(String identificacionPersonal) {
+        //TODO PILAS AQUI
+<span class="nc" id="L43">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L44">        paramSource.addValue(&quot;identificacionPersonal&quot;, identificacionPersonal);</span>
+
+<span class="nc" id="L46">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L47">                .queryForObject(sqlObtenerPorIdentificacionPersonal, paramSource, mapeoClient));</span>
+    }
+
+    @Override
+    public Client obtenerPorId(Long id) {
+<span class="fc" id="L52">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L53">        paramSource.addValue(&quot;id&quot;, id);</span>
+
+<span class="fc" id="L55">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L56">                .queryForObject(sqlObtenerPorId, paramSource, mapeoClient));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.client.adaptador.repositorio</a> &gt; <span class="el_source">MapeoClient.java</span></div><h1>MapeoClient.java</h1><pre class="source lang-java linenums">package com.ceiba.client.adaptador.repositorio;
+
+import com.ceiba.client.consulta.ManejadorConsultaClientes;
+import com.ceiba.client.entidad.Client;
+import com.ceiba.client.puerto.RepositorioClient;
+import com.ceiba.infraestructura.jdbc.MapperResult;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+@Component
+<span class="fc" id="L14">public class MapeoClient implements RowMapper&lt;Client&gt;, MapperResult {</span>
+    //TODO OK
+    @Override
+    public Client mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+<span class="fc" id="L18">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L19">        var identificacionPersonal = resultSet.getString(&quot;identificacion_personal&quot;);</span>
+<span class="fc" id="L20">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="fc" id="L21">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+
+<span class="fc" id="L23">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
