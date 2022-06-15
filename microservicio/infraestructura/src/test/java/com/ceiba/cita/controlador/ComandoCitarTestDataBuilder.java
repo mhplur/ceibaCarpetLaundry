@@ -17,10 +17,10 @@ public class ComandoCitarTestDataBuilder {
 
 
     public ComandoCitarTestDataBuilder crearPorDefecto() {
-        this.idClient = 1l;
+        this.idClient = 3l;
         this.idTarifa = 1l;
         this.fechaCita = LocalDate.parse("2022-06-14");
-        this.horaCita = LocalTime.parse("08:00:00");
+        this.horaCita = LocalTime.parse("08:03:00");
         this.horario = "DIA";
         return this;
     }

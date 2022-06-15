@@ -8,7 +8,7 @@ insert into tarifa(id, nombre, codigo, tiempo_hora_secado, costo_por_metro_cuadr
 
 insert into cita(id, id_client, id_tarifa, fecha_cita, hora_cita, horario, estado, costo) values (1, 1, 1,'2022-06-14', '08:00:00', 'DIA', 1, 15);
 insert into cita(id, id_client, id_tarifa, fecha_cita, hora_cita, horario, estado, costo) values (2, 2, 1,'2022-06-14', '14:00:00', 'DIA', 1, 15);
-insert into cita(id, id_client, id_tarifa, fecha_cita, hora_cita, horario, estado, costo) values (3, 3, 1,'2022-06-14', '16:00:00', 'DIA', 1, 15);
+insert into cita(id, id_client, id_tarifa, fecha_cita, hora_cita, horario, estado, costo) values (3, 2, 1,'2022-06-14', '16:00:00', 'DIA', 1, 15);
 
 insert into cliente(id, nombre, tipo_cliente) values(1,'Cliente 1','PREFERENCIAL');
 insert into cliente(id, nombre, tipo_cliente) values(2,'Cliente 2','COMUN');

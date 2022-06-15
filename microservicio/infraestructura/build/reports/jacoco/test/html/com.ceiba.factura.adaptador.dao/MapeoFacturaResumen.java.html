@@ -14,11 +14,11 @@ import java.sql.SQLException;
 
     @Override
     public ResumenFacturaDTO mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-<span class="fc" id="L17">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L18">        var valorTotal = resultSet.getBigDecimal(&quot;valor_total&quot;);</span>
-<span class="fc" id="L19">        var estado = EstadoFactura.valueOf(resultSet.getString(&quot;estado&quot;));</span>
+<span class="nc" id="L17">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L18">        var valorTotal = resultSet.getBigDecimal(&quot;valor_total&quot;);</span>
+<span class="nc" id="L19">        var estado = EstadoFactura.valueOf(resultSet.getString(&quot;estado&quot;));</span>
 
-<span class="fc" id="L21">        return new ResumenFacturaDTO(id, valorTotal, estado);</span>
+<span class="nc" id="L21">        return new ResumenFacturaDTO(id, valorTotal, estado);</span>
     }
 
 }

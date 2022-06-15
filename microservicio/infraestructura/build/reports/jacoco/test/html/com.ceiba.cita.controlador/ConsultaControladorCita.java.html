@@ -31,13 +31,13 @@ public class ConsultaControladorCita {
     @GetMapping(&quot;todas&quot;)
     @Operation(summary = &quot;Obtener&quot;, description = &quot;Obtener todas las citas &quot;)
     public List&lt;Cita&gt; obtenerTodas() {
-<span class="fc" id="L34">        return manejadorConsultarCitas.ejecutar();</span>
+<span class="nc" id="L34">        return manejadorConsultarCitas.ejecutar();</span>
     }
 
     @GetMapping(&quot;obtenerPorId/{id}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Cita por su id&quot;)
     public Cita obtenerPorId(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L40">        return this.manejadorConsultaCitasPorId.ejecutar(id);</span>
+<span class="nc" id="L40">        return this.manejadorConsultaCitasPorId.ejecutar(id);</span>
     }
 
 }

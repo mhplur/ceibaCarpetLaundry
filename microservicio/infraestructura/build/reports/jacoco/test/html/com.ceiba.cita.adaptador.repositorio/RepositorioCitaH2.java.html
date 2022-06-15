@@ -71,10 +71,10 @@ public class RepositorioCitaH2 implements RepositorioCita {
 
     @Override
     public void actualizarEstado(Cita cita) {
-<span class="fc" id="L74">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L75">        paramSource.addValue(&quot;id&quot;, cita.getId());</span>
-<span class="fc" id="L76">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
-<span class="fc" id="L77">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
-<span class="fc" id="L78">    }</span>
+<span class="nc" id="L74">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L75">        paramSource.addValue(&quot;id&quot;, cita.getId());</span>
+<span class="nc" id="L76">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
+<span class="nc" id="L77">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
+<span class="nc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

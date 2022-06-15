@@ -34,8 +34,8 @@ public class ComandoControladorCita {
     @PostMapping(&quot;cancelar/{id-cita}&quot;)
     @Operation(summary = &quot;Cancelar&quot;, description = &quot;Metodo utilizado para aunlar una cita&quot;)
     public void cancelar(@PathVariable(&quot;id-cita&quot;) Long idCita) {
-<span class="fc" id="L37">        this.manejadorCancelar.ejecutar(new ComandoCancelar(idCita));</span>
-<span class="fc" id="L38">    }</span>
+<span class="nc" id="L37">        this.manejadorCancelar.ejecutar(new ComandoCancelar(idCita));</span>
+<span class="nc" id="L38">    }</span>
 
 
 }
