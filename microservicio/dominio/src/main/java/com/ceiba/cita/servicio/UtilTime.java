@@ -31,7 +31,7 @@ public class UtilTime {
         int startValue = dateTime.compareTo(startRange);
         int endValue = dateTime.compareTo(endRange);
 
-        return (startValue == 1 || startValue == 0) && (endValue == -1 || endValue == 0) ?
+        return (startValue > 0 || startValue == 0) && (endValue < 0 || endValue == 0) ?
                 true : false;
     }
 }
