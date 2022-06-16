@@ -28,27 +28,6 @@ public class Cita {
 
     private Double costo;
 
-    public Cita() {
-        super();
-    }
-
-    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
-        this.client = client;
-        this.tarifa = tarifa;
-        this.fechaCita = fechaCita;
-        this.horaCita = horaCita;
-        this.horario = horario;
-        this.estado = estado;
-        this.costo = costo;
-    }
-
-    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {
-        this.client = client;
-        this.tarifa = tarifa;
-        this.fechaCita = fechaCita;
-        this.horaCita = horaCita;
-        this.horario = horario;
-    }
 
     public static Cita crear(SolicitarCita solicitarCita) {
         ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), "Cliente de la cita es requerido");
@@ -56,9 +35,9 @@ public class Cita {
         ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), "Fecha de la cita es requerido");
         ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), "Hora de la cita es requerido");
         ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), "Horario de la cita es requerido");
-        return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),
+        return new Cita(1l, solicitarCita.getCliente(), solicitarCita.getTarifa(),
                 solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),
-                solicitarCita.getHorario());
+                solicitarCita.getHorario(), 1, 0.0);
     }
 
     public static Cita reconstruir(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
