@@ -3,7 +3,6 @@ package com.ceiba.client.entidad;
 import com.ceiba.dominio.ValidadorArgumento;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class Client {
 
     private Long id;
@@ -14,6 +13,12 @@ public class Client {
 
     private String direccion;
 
+    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {
+        this.id = id;
+        this.identificacionPersonal = identificacionPersonal;
+        this.nombre = nombre;
+        this.direccion = direccion;
+    }
 
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
         ValidadorArgumento.validarObligatorio(id, "Id del cliente es requerida");
