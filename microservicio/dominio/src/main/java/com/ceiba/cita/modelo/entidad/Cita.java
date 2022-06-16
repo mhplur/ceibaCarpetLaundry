@@ -4,12 +4,10 @@ import com.ceiba.client.entidad.Client;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.tarifa.entidad.Tarifa;
-import lombok.AllArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@AllArgsConstructor
 public class Cita {
 
     private Long id;
@@ -30,6 +28,17 @@ public class Cita {
 
     public Cita() {
         super();
+    }
+
+    public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
+        this.id = id;
+        this.client = client;
+        this.tarifa = tarifa;
+        this.fechaCita = fechaCita;
+        this.horaCita = horaCita;
+        this.horario = horario;
+        this.estado = estado;
+        this.costo = costo;
     }
 
     public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {

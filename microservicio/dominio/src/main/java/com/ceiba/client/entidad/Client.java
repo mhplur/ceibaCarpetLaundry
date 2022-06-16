@@ -1,7 +1,6 @@
 package com.ceiba.client.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import lombok.AllArgsConstructor;
 
 public class Client {
 
@@ -49,4 +48,3 @@ public class Client {
     }
 
 }
-

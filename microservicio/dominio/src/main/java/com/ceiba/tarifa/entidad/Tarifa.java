@@ -3,7 +3,6 @@ package com.ceiba.tarifa.entidad;
 import com.ceiba.dominio.ValidadorArgumento;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class Tarifa {
     private Long id;
 
@@ -16,6 +15,15 @@ public class Tarifa {
     private Integer costoPorMetroCuadrado;
 
     private Integer limpiezaProfunda;
+
+    public Tarifa(Long id, String nombre, String codigo, Integer tiempoHoraSecado, Integer costoPorMetroCuadrado, Integer limpiezaProfunda) {
+        this.id = id;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.tiempoHoraSecado = tiempoHoraSecado;
+        this.costoPorMetroCuadrado = costoPorMetroCuadrado;
+        this.limpiezaProfunda = limpiezaProfunda;
+    }
 
     public static Tarifa reconstuir(Long id, String nombre, String codigo, Integer tiempoHoraSecado, Integer costoPorMetroCuadrado, Integer limpiezaProfunda) {
         ValidadorArgumento.validarObligatorio(id, "Id de la tarifa es requerido");
