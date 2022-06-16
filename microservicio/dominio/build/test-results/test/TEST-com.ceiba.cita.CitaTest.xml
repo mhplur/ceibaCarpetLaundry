@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cita.CitaTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-06-16T02:31:37" hostname="DESKTOP-SJD26V0" time="0.151">
+<testsuite name="com.ceiba.cita.CitaTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-06-16T03:01:44" hostname="DESKTOP-SJD26V0" time="0.199">
   <properties/>
-  <testcase name="reconstruirCitaSinCostoDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.109"/>
-  <testcase name="reconstruirCitaSinHorarioDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.006"/>
-  <testcase name="reconstruirCitaSinTarifaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.009"/>
-  <testcase name="reconstruirCitaSinHoraCitaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.004"/>
-  <testcase name="reconstruirCitaSinIdDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.003"/>
-  <testcase name="reconstruirCitaSinFechaCitaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.002"/>
-  <testcase name="reconstruirCitaSinEstadoDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.003"/>
-  <testcase name="deberiaCrearCitaExistosa()" classname="com.ceiba.cita.CitaTest" time="0.002"/>
-  <testcase name="reconstruirCitaSinClienteDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.002"/>
+  <testcase name="reconstruirCitaSinCostoDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.143"/>
+  <testcase name="deberiaCrearCitaExitosa()" classname="com.ceiba.cita.CitaTest" time="0.007"/>
+  <testcase name="reconstruirCitaSinHorarioDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.002"/>
+  <testcase name="reconstruirCitaSinTarifaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.003"/>
+  <testcase name="reconstruirCitaSinHoraCitaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.003"/>
+  <testcase name="reconstruirCitaSinIdDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.001"/>
+  <testcase name="deberiaReconstruirCitaExitosa()" classname="com.ceiba.cita.CitaTest" time="0.001"/>
+  <testcase name="reconstruirCitaSinFechaCitaDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.011"/>
+  <testcase name="reconstruirCitaSinEstadoDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.004"/>
+  <testcase name="reconstruirCitaSinClienteDeberiaLanzarError()" classname="com.ceiba.cita.CitaTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
