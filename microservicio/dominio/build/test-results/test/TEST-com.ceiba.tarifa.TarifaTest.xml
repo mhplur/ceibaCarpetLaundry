@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.tarifa.TarifaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-06-16T01:43:10" hostname="DESKTOP-SJD26V0" time="0.025">
+<testsuite name="com.ceiba.tarifa.TarifaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-06-16T02:23:45" hostname="DESKTOP-SJD26V0" time="0.077">
   <properties/>
-  <testcase name="reconstruirTarifaSinCodigoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.003"/>
-  <testcase name="reconstruirTarifaSinNombreDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
-  <testcase name="reconstruirCostoMetroCuadradoHoraSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
-  <testcase name="deberiaCrearTarifaExitosa()" classname="com.ceiba.tarifa.TarifaTest" time="0.001"/>
-  <testcase name="reconstruirLimpiezaProfundaSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
-  <testcase name="reconstruirTarifaSinTiempoHoraSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.003"/>
-  <testcase name="reconstruirTarifaSinIdDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.001"/>
+  <testcase name="reconstruirTarifaSinCodigoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.032"/>
+  <testcase name="reconstruirTarifaSinNombreDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.003"/>
+  <testcase name="reconstruirCostoMetroCuadradoHoraSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.001"/>
+  <testcase name="deberiaCrearTarifaExitosa()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
+  <testcase name="reconstruirLimpiezaProfundaSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.004"/>
+  <testcase name="reconstruirTarifaSinTiempoHoraSecadoDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
+  <testcase name="reconstruirTarifaSinIdDeberiaLanzarError()" classname="com.ceiba.tarifa.TarifaTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

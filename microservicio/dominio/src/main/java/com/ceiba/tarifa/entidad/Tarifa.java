@@ -35,17 +35,10 @@ public class Tarifa {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
 
     public Integer getTiempoHoraSecado() {
         return tiempoHoraSecado;
