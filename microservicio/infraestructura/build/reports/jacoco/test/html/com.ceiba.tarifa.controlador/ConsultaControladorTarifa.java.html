@@ -28,13 +28,13 @@ public class ConsultaControladorTarifa {
     @GetMapping(&quot;obtenerPorCodigo/{codigo}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Tarifa por su codigo&quot;)
     public Tarifa obtenerPorCodigo(@PathVariable(&quot;codigo&quot;) String codigo) {
-<span class="fc" id="L31">        return this.manejadorConsultaTarifaPorCodigo.ejecutar(codigo);</span>
+<span class="nc" id="L31">        return this.manejadorConsultaTarifaPorCodigo.ejecutar(codigo);</span>
     }
 
     @GetMapping(&quot;obtenerPorId/{id}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Tarifa por su id&quot;)
     public Tarifa obtenerPorId(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L37">        return this.manejadorConsultaTarifaPorId.ejecutar(id);</span>
+<span class="nc" id="L37">        return this.manejadorConsultaTarifaPorId.ejecutar(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

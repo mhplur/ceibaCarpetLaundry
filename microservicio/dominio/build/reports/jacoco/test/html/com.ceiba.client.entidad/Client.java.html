@@ -17,11 +17,11 @@ public class Client {
 
 
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
-<span class="fc" id="L20">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
-<span class="fc" id="L21">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
-<span class="fc" id="L22">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
-<span class="fc" id="L23">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
-<span class="fc" id="L24">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
+<span class="nc" id="L20">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
+<span class="nc" id="L21">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
+<span class="nc" id="L22">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
+<span class="nc" id="L23">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
+<span class="nc" id="L24">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
     }
 
     public Long getId() {

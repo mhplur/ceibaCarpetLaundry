@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.factura.ServicioAnularFacturaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-15T22:43:30" hostname="DESKTOP-SJD26V0" time="3.297">
-  <properties/>
-  <testcase name="anularFacturaNullDeberiaLanzarError()" classname="com.ceiba.factura.ServicioAnularFacturaTest" time="3.147"/>
-  <testcase name="deberiaAnularExitosamente()" classname="com.ceiba.factura.ServicioAnularFacturaTest" time="0.148"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

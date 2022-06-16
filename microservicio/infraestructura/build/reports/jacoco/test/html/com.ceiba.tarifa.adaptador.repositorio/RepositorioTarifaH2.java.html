@@ -28,11 +28,11 @@ public class RepositorioTarifaH2 implements RepositorioTarifa {
 
     @Override
     public Tarifa obtenerPorCodigo(String codigo) {
-<span class="fc" id="L31">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L32">        paramSource.addValue(&quot;codigo&quot;, codigo);</span>
+<span class="nc" id="L31">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L32">        paramSource.addValue(&quot;codigo&quot;, codigo);</span>
 
-<span class="fc" id="L34">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L35">                .queryForObject(sqlObtenerPorCodigo, paramSource, mapeoTarifa));</span>
+<span class="nc" id="L34">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L35">                .queryForObject(sqlObtenerPorCodigo, paramSource, mapeoTarifa));</span>
     }
 
     @Override

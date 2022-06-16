@@ -24,13 +24,13 @@ public class MapeoFactura implements RowMapper&lt;Factura&gt;, MapperResult {
 
     @Override
     public Factura mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-<span class="fc" id="L27">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L28">        var idCliente = resultSet.getLong(&quot;id_cliente&quot;);</span>
-<span class="fc" id="L29">        var valorTotal = resultSet.getBigDecimal(&quot;valor_total&quot;);</span>
-<span class="fc" id="L30">        var estado = EstadoFactura.valueOf(resultSet.getString(&quot;estado&quot;));</span>
+<span class="nc" id="L27">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L28">        var idCliente = resultSet.getLong(&quot;id_cliente&quot;);</span>
+<span class="nc" id="L29">        var valorTotal = resultSet.getBigDecimal(&quot;valor_total&quot;);</span>
+<span class="nc" id="L30">        var estado = EstadoFactura.valueOf(resultSet.getString(&quot;estado&quot;));</span>
 
-<span class="fc" id="L32">        return Factura.reconstruir(id, repositorioCliente.obtener(idCliente),</span>
-<span class="fc" id="L33">                repositorioProductoFacturar.obtenerPorFactura(id), valorTotal, estado);</span>
+<span class="nc" id="L32">        return Factura.reconstruir(id, repositorioCliente.obtener(idCliente),</span>
+<span class="nc" id="L33">                repositorioProductoFacturar.obtenerPorFactura(id), valorTotal, estado);</span>
     }
 
 }

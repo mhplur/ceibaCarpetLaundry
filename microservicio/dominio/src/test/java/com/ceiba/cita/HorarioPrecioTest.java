@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class HorarioPrecioTest {
+
     @Test
     public void deberiaRetornarValoresDeNoche() {
         Assertions.assertEquals(0.0, HorarioPrecio.NOCHE.getPorcentaje());
