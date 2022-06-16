@@ -32,16 +32,6 @@ public class Cita {
         super();
     }
 
-    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
-        this.client = client;
-        this.tarifa = tarifa;
-        this.fechaCita = fechaCita;
-        this.horaCita = horaCita;
-        this.horario = horario;
-        this.estado = estado;
-        this.costo = costo;
-    }
-
     public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {
         this.client = client;
         this.tarifa = tarifa;

@@ -30,7 +30,7 @@ public class Client {
     public String getIdentificacionPersonal() {
         return identificacionPersonal;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
