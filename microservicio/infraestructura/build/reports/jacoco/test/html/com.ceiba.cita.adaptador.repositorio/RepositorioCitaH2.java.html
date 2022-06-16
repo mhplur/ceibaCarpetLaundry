@@ -45,15 +45,15 @@ public class RepositorioCitaH2 implements RepositorioCita {
 
     @Override
     public Long guardar(Cita cita) {
-<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L49">        paramSource.addValue(&quot;id_client&quot;, cita.getClient().getId());</span>
-<span class="nc" id="L50">        paramSource.addValue(&quot;id_tarifa&quot;, cita.getTarifa().getId());</span>
-<span class="nc" id="L51">        paramSource.addValue(&quot;fecha_cita&quot;, cita.getFechaCita());</span>
-<span class="nc" id="L52">        paramSource.addValue(&quot;hora_cita&quot;, cita.getHoraCita());</span>
-<span class="nc" id="L53">        paramSource.addValue(&quot;horario&quot;, cita.getHorario());</span>
-<span class="nc" id="L54">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
-<span class="nc" id="L55">        paramSource.addValue(&quot;costo&quot;, cita.getCosto());</span>
-<span class="nc" id="L56">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="fc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L49">        paramSource.addValue(&quot;id_client&quot;, cita.getClient().getId());</span>
+<span class="fc" id="L50">        paramSource.addValue(&quot;id_tarifa&quot;, cita.getTarifa().getId());</span>
+<span class="fc" id="L51">        paramSource.addValue(&quot;fecha_cita&quot;, cita.getFechaCita());</span>
+<span class="fc" id="L52">        paramSource.addValue(&quot;hora_cita&quot;, cita.getHoraCita());</span>
+<span class="fc" id="L53">        paramSource.addValue(&quot;horario&quot;, cita.getHorario());</span>
+<span class="fc" id="L54">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
+<span class="fc" id="L55">        paramSource.addValue(&quot;costo&quot;, cita.getCosto());</span>
+<span class="fc" id="L56">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
     }
 
 
