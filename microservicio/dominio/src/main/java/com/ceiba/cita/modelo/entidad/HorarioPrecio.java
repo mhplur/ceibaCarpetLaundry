@@ -12,6 +12,8 @@ public enum HorarioPrecio {
 
     private Integer costoAdicional;
 
+    private int hola;
+
     private HorarioPrecio(Double porcentaje, Integer costoAdicional) {
 
         this.porcentaje = porcentaje;

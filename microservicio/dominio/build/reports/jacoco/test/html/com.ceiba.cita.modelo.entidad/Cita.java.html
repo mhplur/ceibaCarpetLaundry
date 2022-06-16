@@ -74,11 +74,11 @@ public class Cita {
     }
 
     public void cancelar() {
-<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (this.estado == 0) {</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if (this.estado == 0) {</span>
 <span class="nc" id="L78">            throw new ExcepcionValorInvalido(&quot;La cita ya se encuentra cancelada &quot;);</span>
         }
-<span class="nc" id="L80">        this.estado = 0;</span>
-<span class="nc" id="L81">    }</span>
+<span class="fc" id="L80">        this.estado = 0;</span>
+<span class="fc" id="L81">    }</span>
 
     public Long getId() {
 <span class="fc" id="L84">        return id;</span>
