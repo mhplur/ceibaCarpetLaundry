@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Client.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.client.entidad</a> &gt; <span class="el_source">Client.java</span></div><h1>Client.java</h1><pre class="source lang-java linenums">package com.ceiba.client.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import lombok.AllArgsConstructor;
 
-<span class="fc" id="L6">@AllArgsConstructor</span>
 public class Client {
 
     private Long id;
@@ -14,43 +12,40 @@ public class Client {
 
     private String direccion;
 
-
+<span class="fc" id="L15">    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {</span>
+<span class="fc" id="L16">        this.id = id;</span>
+<span class="fc" id="L17">        this.identificacionPersonal = identificacionPersonal;</span>
+<span class="fc" id="L18">        this.nombre = nombre;</span>
+<span class="fc" id="L19">        this.direccion = direccion;</span>
+<span class="fc" id="L20">    }</span>
 
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
-<span class="fc" id="L20">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
-<span class="fc" id="L21">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
-<span class="fc" id="L22">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
-<span class="fc" id="L23">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
-<span class="fc" id="L24">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
+<span class="fc" id="L23">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
+<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
+<span class="fc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
+<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
+<span class="fc" id="L27">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
     }
 
     public Long getId() {
-<span class="fc" id="L28">        return id;</span>
+<span class="fc" id="L31">        return id;</span>
     }
 
     public String getIdentificacionPersonal() {
-<span class="fc" id="L32">        return identificacionPersonal;</span>
+<span class="fc" id="L35">        return identificacionPersonal;</span>
     }
 
-    public void setIdentificacionPersonal(String identificacionPersonal) {
-<span class="nc" id="L36">        this.identificacionPersonal = identificacionPersonal;</span>
-<span class="nc" id="L37">    }</span>
-
     public String getNombre() {
-<span class="fc" id="L40">        return nombre;</span>
+<span class="fc" id="L39">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="nc" id="L44">        this.nombre = nombre;</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L43">        this.nombre = nombre;</span>
+<span class="nc" id="L44">    }</span>
 
     public String getDireccion() {
-<span class="fc" id="L48">        return direccion;</span>
+<span class="fc" id="L47">        return direccion;</span>
     }
 
-    public void setDireccion(String direccion) {
-<span class="nc" id="L52">        this.direccion = direccion;</span>
-<span class="nc" id="L53">    }</span>
 }
-
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

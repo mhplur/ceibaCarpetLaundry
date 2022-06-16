@@ -4,12 +4,10 @@ import com.ceiba.client.entidad.Client;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.tarifa.entidad.Tarifa;
-import lombok.AllArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-<span class="fc" id="L12">@AllArgsConstructor</span>
 public class Cita {
 
     private Long id;
@@ -29,115 +27,116 @@ public class Cita {
     private Double costo;
 
     public Cita() {
-<span class="nc" id="L32">        super();</span>
-<span class="nc" id="L33">    }</span>
+<span class="nc" id="L30">        super();</span>
+<span class="nc" id="L31">    }</span>
 
-<span class="nc" id="L35">    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {</span>
-<span class="nc" id="L36">        this.client = client;</span>
-<span class="nc" id="L37">        this.tarifa = tarifa;</span>
-<span class="nc" id="L38">        this.fechaCita = fechaCita;</span>
-<span class="nc" id="L39">        this.horaCita = horaCita;</span>
-<span class="nc" id="L40">        this.horario = horario;</span>
-<span class="nc" id="L41">        this.estado = estado;</span>
-<span class="nc" id="L42">        this.costo = costo;</span>
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L33">    public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {</span>
+<span class="fc" id="L34">        this.id = id;</span>
+<span class="fc" id="L35">        this.client = client;</span>
+<span class="fc" id="L36">        this.tarifa = tarifa;</span>
+<span class="fc" id="L37">        this.fechaCita = fechaCita;</span>
+<span class="fc" id="L38">        this.horaCita = horaCita;</span>
+<span class="fc" id="L39">        this.horario = horario;</span>
+<span class="fc" id="L40">        this.estado = estado;</span>
+<span class="fc" id="L41">        this.costo = costo;</span>
+<span class="fc" id="L42">    }</span>
 
-<span class="nc" id="L45">    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {</span>
-<span class="nc" id="L46">        this.client = client;</span>
-<span class="nc" id="L47">        this.tarifa = tarifa;</span>
-<span class="nc" id="L48">        this.fechaCita = fechaCita;</span>
-<span class="nc" id="L49">        this.horaCita = horaCita;</span>
-<span class="nc" id="L50">        this.horario = horario;</span>
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L44">    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {</span>
+<span class="nc" id="L45">        this.client = client;</span>
+<span class="nc" id="L46">        this.tarifa = tarifa;</span>
+<span class="nc" id="L47">        this.fechaCita = fechaCita;</span>
+<span class="nc" id="L48">        this.horaCita = horaCita;</span>
+<span class="nc" id="L49">        this.horario = horario;</span>
+<span class="nc" id="L50">    }</span>
 
     public static Cita crear(SolicitarCita solicitarCita) {
-<span class="nc" id="L54">        ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), &quot;Cliente de la cita es requerido&quot;);</span>
-<span class="nc" id="L55">        ValidadorArgumento.validarObligatorio(solicitarCita.getTarifa(), &quot;Tarifa de la cita es requerido&quot;);</span>
-<span class="nc" id="L56">        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), &quot;Fecha de la cita es requerido&quot;);</span>
-<span class="nc" id="L57">        ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), &quot;Hora de la cita es requerido&quot;);</span>
-<span class="nc" id="L58">        ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), &quot;Horario de la cita es requerido&quot;);</span>
-<span class="nc" id="L59">        return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),</span>
-<span class="nc" id="L60">                solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),</span>
-<span class="nc" id="L61">                solicitarCita.getHorario());</span>
+<span class="nc" id="L53">        ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), &quot;Cliente de la cita es requerido&quot;);</span>
+<span class="nc" id="L54">        ValidadorArgumento.validarObligatorio(solicitarCita.getTarifa(), &quot;Tarifa de la cita es requerido&quot;);</span>
+<span class="nc" id="L55">        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), &quot;Fecha de la cita es requerido&quot;);</span>
+<span class="nc" id="L56">        ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), &quot;Hora de la cita es requerido&quot;);</span>
+<span class="nc" id="L57">        ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), &quot;Horario de la cita es requerido&quot;);</span>
+<span class="nc" id="L58">        return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),</span>
+<span class="nc" id="L59">                solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),</span>
+<span class="nc" id="L60">                solicitarCita.getHorario());</span>
     }
 
     public static Cita reconstruir(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
-<span class="fc" id="L65">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la cita es requerido&quot;);</span>
-<span class="fc" id="L66">        ValidadorArgumento.validarObligatorio(client, &quot;Cliente de la cita es requerido&quot;);</span>
-<span class="fc" id="L67">        ValidadorArgumento.validarObligatorio(tarifa, &quot;Tarifa de la cita es requerido&quot;);</span>
-<span class="fc" id="L68">        ValidadorArgumento.validarObligatorio(fechaCita, &quot;Fecha de la cita es requerido&quot;);</span>
-<span class="fc" id="L69">        ValidadorArgumento.validarObligatorio(horaCita, &quot;Hora de la cita es requerido&quot;);</span>
-<span class="fc" id="L70">        ValidadorArgumento.validarObligatorio(horario, &quot;Horario de la cita es requerido&quot;);</span>
-<span class="fc" id="L71">        ValidadorArgumento.validarObligatorio(estado, &quot;Estado de la cita es requerido&quot;);</span>
-<span class="fc" id="L72">        ValidadorArgumento.validarObligatorio(costo, &quot;Costo de la cita es requerido&quot;);</span>
-<span class="fc" id="L73">        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo);</span>
+<span class="fc" id="L64">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la cita es requerido&quot;);</span>
+<span class="fc" id="L65">        ValidadorArgumento.validarObligatorio(client, &quot;Cliente de la cita es requerido&quot;);</span>
+<span class="fc" id="L66">        ValidadorArgumento.validarObligatorio(tarifa, &quot;Tarifa de la cita es requerido&quot;);</span>
+<span class="fc" id="L67">        ValidadorArgumento.validarObligatorio(fechaCita, &quot;Fecha de la cita es requerido&quot;);</span>
+<span class="fc" id="L68">        ValidadorArgumento.validarObligatorio(horaCita, &quot;Hora de la cita es requerido&quot;);</span>
+<span class="fc" id="L69">        ValidadorArgumento.validarObligatorio(horario, &quot;Horario de la cita es requerido&quot;);</span>
+<span class="fc" id="L70">        ValidadorArgumento.validarObligatorio(estado, &quot;Estado de la cita es requerido&quot;);</span>
+<span class="fc" id="L71">        ValidadorArgumento.validarObligatorio(costo, &quot;Costo de la cita es requerido&quot;);</span>
+<span class="fc" id="L72">        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo);</span>
     }
 
     public void cancelar() {
-<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if (this.estado == 0) {</span>
-<span class="nc" id="L78">            throw new ExcepcionValorInvalido(&quot;La cita ya se encuentra cancelada &quot;);</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (this.estado == 0) {</span>
+<span class="nc" id="L77">            throw new ExcepcionValorInvalido(&quot;La cita ya se encuentra cancelada &quot;);</span>
         }
-<span class="fc" id="L80">        this.estado = 0;</span>
-<span class="fc" id="L81">    }</span>
+<span class="fc" id="L79">        this.estado = 0;</span>
+<span class="fc" id="L80">    }</span>
 
     public Long getId() {
-<span class="fc" id="L84">        return id;</span>
+<span class="fc" id="L83">        return id;</span>
     }
 
     public Client getClient() {
-<span class="fc" id="L88">        return client;</span>
+<span class="fc" id="L87">        return client;</span>
     }
 
     public void setClient(Client client) {
-<span class="nc" id="L92">        this.client = client;</span>
-<span class="nc" id="L93">    }</span>
+<span class="nc" id="L91">        this.client = client;</span>
+<span class="nc" id="L92">    }</span>
 
     public Tarifa getTarifa() {
-<span class="fc" id="L96">        return tarifa;</span>
+<span class="fc" id="L95">        return tarifa;</span>
     }
 
     public void setTarifa(Tarifa tarifa) {
-<span class="nc" id="L100">        this.tarifa = tarifa;</span>
-<span class="nc" id="L101">    }</span>
+<span class="nc" id="L99">        this.tarifa = tarifa;</span>
+<span class="nc" id="L100">    }</span>
 
     public LocalDate getFechaCita() {
-<span class="fc" id="L104">        return fechaCita;</span>
+<span class="fc" id="L103">        return fechaCita;</span>
     }
 
     public void setFechaCita(LocalDate fechaCita) {
-<span class="nc" id="L108">        this.fechaCita = fechaCita;</span>
-<span class="nc" id="L109">    }</span>
+<span class="nc" id="L107">        this.fechaCita = fechaCita;</span>
+<span class="nc" id="L108">    }</span>
 
     public LocalTime getHoraCita() {
-<span class="fc" id="L112">        return horaCita;</span>
+<span class="fc" id="L111">        return horaCita;</span>
     }
 
     public void setHoraCita(LocalTime horaCita) {
-<span class="nc" id="L116">        this.horaCita = horaCita;</span>
-<span class="nc" id="L117">    }</span>
+<span class="nc" id="L115">        this.horaCita = horaCita;</span>
+<span class="nc" id="L116">    }</span>
 
     public String getHorario() {
-<span class="fc" id="L120">        return horario;</span>
+<span class="fc" id="L119">        return horario;</span>
     }
 
     public void setHorario(String horario) {
-<span class="nc" id="L124">        this.horario = horario;</span>
-<span class="nc" id="L125">    }</span>
+<span class="nc" id="L123">        this.horario = horario;</span>
+<span class="nc" id="L124">    }</span>
 
     public Integer getEstado() {
-<span class="fc" id="L128">        return estado;</span>
+<span class="fc" id="L127">        return estado;</span>
     }
 
     public void setEstado(Integer estado) {
-<span class="nc" id="L132">        this.estado = estado;</span>
-<span class="nc" id="L133">    }</span>
+<span class="nc" id="L131">        this.estado = estado;</span>
+<span class="nc" id="L132">    }</span>
 
     public Double getCosto() {
-<span class="fc" id="L136">        return costo;</span>
+<span class="fc" id="L135">        return costo;</span>
     }
 
     public void setCosto(Double costo) {
-<span class="nc" id="L140">        this.costo = costo;</span>
-<span class="nc" id="L141">    }</span>
+<span class="nc" id="L139">        this.costo = costo;</span>
+<span class="nc" id="L140">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -33,17 +33,17 @@ public class RepositorioClientH2 implements RepositorioClient {
 
     @Override
     public List&lt;Client&gt; obtenerTodos() {
-<span class="fc" id="L36">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L37">                .query(sqlObtenerTodas, mapeoClient);</span>
+<span class="nc" id="L36">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L37">                .query(sqlObtenerTodas, mapeoClient);</span>
     }
 
     @Override
     public Client obtenerPorIdentificacionPersonal(String identificacionPersonal) {
-<span class="fc" id="L42">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L43">        paramSource.addValue(&quot;identificacionPersonal&quot;, identificacionPersonal);</span>
+<span class="nc" id="L42">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L43">        paramSource.addValue(&quot;identificacionPersonal&quot;, identificacionPersonal);</span>
 
-<span class="fc" id="L45">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L46">                .queryForObject(sqlObtenerPorIdentificacionPersonal, paramSource, mapeoClient));</span>
+<span class="nc" id="L45">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L46">                .queryForObject(sqlObtenerPorIdentificacionPersonal, paramSource, mapeoClient));</span>
     }
 
     @Override
