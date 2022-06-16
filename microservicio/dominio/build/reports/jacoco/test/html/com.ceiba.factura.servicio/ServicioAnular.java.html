@@ -8,14 +8,14 @@ public class ServicioAnular {
 
     private final RepositorioFactura repositorioFactura;
 
-<span class="nc" id="L11">    public ServicioAnular(RepositorioFactura repositorioFactura) {</span>
-<span class="nc" id="L12">        this.repositorioFactura = repositorioFactura;</span>
-<span class="nc" id="L13">    }</span>
+<span class="fc" id="L11">    public ServicioAnular(RepositorioFactura repositorioFactura) {</span>
+<span class="fc" id="L12">        this.repositorioFactura = repositorioFactura;</span>
+<span class="fc" id="L13">    }</span>
 
     public void ejecutar(Factura factura) {
-<span class="nc" id="L16">        ValidadorArgumento.validarObligatorio(factura, &quot;No existe una factura para anular&quot;);</span>
-<span class="nc" id="L17">        factura.anular();</span>
-<span class="nc" id="L18">        repositorioFactura.actualizarEstado(factura);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L16">        ValidadorArgumento.validarObligatorio(factura, &quot;No existe una factura para anular&quot;);</span>
+<span class="fc" id="L17">        factura.anular();</span>
+<span class="fc" id="L18">        repositorioFactura.actualizarEstado(factura);</span>
+<span class="fc" id="L19">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

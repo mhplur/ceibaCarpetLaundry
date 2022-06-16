@@ -13,15 +13,15 @@ public class ManejadorFacturar implements ManejadorComandoRespuesta&lt;ComandoSo
     private final FabricaSolicitudFacturar fabricaSolicitudFacturar;
     private final ServicioFacturar servicioFacturar;
 
-<span class="nc" id="L16">    public ManejadorFacturar(FabricaSolicitudFacturar fabricaSolicitudFacturar, ServicioFacturar servicioFacturar) {</span>
-<span class="nc" id="L17">        this.fabricaSolicitudFacturar = fabricaSolicitudFacturar;</span>
-<span class="nc" id="L18">        this.servicioFacturar = servicioFacturar;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L16">    public ManejadorFacturar(FabricaSolicitudFacturar fabricaSolicitudFacturar, ServicioFacturar servicioFacturar) {</span>
+<span class="fc" id="L17">        this.fabricaSolicitudFacturar = fabricaSolicitudFacturar;</span>
+<span class="fc" id="L18">        this.servicioFacturar = servicioFacturar;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoSolicitudFacturar comandoSolicitudFacturar) {
-<span class="nc" id="L23">        return new ComandoRespuesta&lt;&gt;(servicioFacturar</span>
-<span class="nc" id="L24">                .ejecutar(fabricaSolicitudFacturar.crear(comandoSolicitudFacturar)));</span>
+<span class="fc" id="L23">        return new ComandoRespuesta&lt;&gt;(servicioFacturar</span>
+<span class="fc" id="L24">                .ejecutar(fabricaSolicitudFacturar.crear(comandoSolicitudFacturar)));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

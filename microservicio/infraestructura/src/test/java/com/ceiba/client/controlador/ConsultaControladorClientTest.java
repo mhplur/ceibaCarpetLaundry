@@ -45,11 +45,6 @@ public class ConsultaControladorClientTest {
     }
 
     @Test
-    void deberiaRetornarListaDeClientes(){
-
-    }
-
-    @Test
     void consultarPorIdentificacionPersonal() throws Exception {
         mockMvc.perform(get("/cliente/obtenerPorIdentificacionPersonal/001")
                         .contentType(MediaType.APPLICATION_JSON))

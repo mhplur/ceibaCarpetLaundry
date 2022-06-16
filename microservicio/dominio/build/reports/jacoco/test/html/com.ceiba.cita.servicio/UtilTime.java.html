@@ -31,7 +31,7 @@ import java.time.LocalTime;
 <span class="nc" id="L31">        int startValue = dateTime.compareTo(startRange);</span>
 <span class="nc" id="L32">        int endValue = dateTime.compareTo(endRange);</span>
 
-<span class="nc bnc" id="L34" title="All 8 branches missed.">        return (startValue &gt; 0 || startValue == 0) &amp;&amp; (endValue &lt; 0 || endValue == 0) ?</span>
+<span class="nc bnc" id="L34" title="All 8 branches missed.">        return (startValue == 1 || startValue == 0) &amp;&amp; (endValue == -1 || endValue == 0) ?</span>
 <span class="nc" id="L35">                true : false;</span>
     }
 }

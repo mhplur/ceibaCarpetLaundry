@@ -16,16 +16,16 @@ public class RepositorioProductoMysql implements RepositorioProducto {
     @SqlStatement(namespace = &quot;producto&quot;, value = &quot;obtenerporid&quot;)
     private static String sqlObtenerPorId;
 
-<span class="nc" id="L19">    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="nc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L19">    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L21">    }</span>
 
     @Override
     public Producto obtener(Long id) {
-<span class="nc" id="L25">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L26">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L27">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
-<span class="nc" id="L28">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
+<span class="fc" id="L25">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L26">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L27">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
+<span class="fc" id="L28">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
                         paramSource, new MapeoProducto()));
     }
 

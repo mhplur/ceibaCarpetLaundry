@@ -17,6 +17,10 @@ public class Tarifa {
 
     private Integer limpiezaProfunda;
 
+    public Tarifa() {
+        super();
+    }
+
     public static Tarifa reconstuir(Long id, String nombre, String codigo, Integer tiempoHoraSecado, Integer costoPorMetroCuadrado, Integer limpiezaProfunda) {
         ValidadorArgumento.validarObligatorio(id, "Id de la tarifa es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "Nombre de la tarifa es requerido");
@@ -35,21 +39,39 @@ public class Tarifa {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getCodigo() {
         return codigo;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
     public Integer getTiempoHoraSecado() {
         return tiempoHoraSecado;
+    }
+
+    public void setTiempoHoraSecado(Integer tiempoHoraSecado) {
+        this.tiempoHoraSecado = tiempoHoraSecado;
     }
 
     public Integer getCostoPorMetroCuadrado() {
         return costoPorMetroCuadrado;
     }
 
+    public void setCostoPorMetroCuadrado(Integer costoPorMetroCuadrado) {
+        this.costoPorMetroCuadrado = costoPorMetroCuadrado;
+    }
+
     public Integer getLimpiezaProfunda() {
         return limpiezaProfunda;
     }
 
+    public void setLimpiezaProfunda(Integer limpiezaProfunda) {
+        this.limpiezaProfunda = limpiezaProfunda;
+    }
 }

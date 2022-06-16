@@ -22,30 +22,30 @@ public class RepositorioProductoFacturarMysql implements RepositorioProductoFact
     @SqlStatement(namespace = &quot;productofacturar&quot;, value = &quot;obtenerporfactura&quot;)
     private static String sqlObtenerPorFactura;
 
-<span class="nc" id="L25">    public RepositorioProductoFacturarMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoProductoFacturar mapeoProductoFacturar) {</span>
-<span class="nc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="nc" id="L27">        this.mapeoProductoFacturar = mapeoProductoFacturar;</span>
-<span class="nc" id="L28">    }</span>
+<span class="fc" id="L25">    public RepositorioProductoFacturarMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoProductoFacturar mapeoProductoFacturar) {</span>
+<span class="fc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L27">        this.mapeoProductoFacturar = mapeoProductoFacturar;</span>
+<span class="fc" id="L28">    }</span>
 
     @Override
     public void guardarPorFactura(Factura factura, Long idFactura) {
-<span class="nc" id="L32">        factura.getProductos().stream().forEach(productoFacturar -&gt; this.guardar(productoFacturar, idFactura));</span>
-<span class="nc" id="L33">    }</span>
+<span class="fc" id="L32">        factura.getProductos().stream().forEach(productoFacturar -&gt; this.guardar(productoFacturar, idFactura));</span>
+<span class="fc" id="L33">    }</span>
 
     @Override
     public List&lt;ProductoFacturar&gt; obtenerPorFactura(Long idFactura) {
-<span class="nc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L38">        paramSource.addValue(&quot;id_factura&quot;, idFactura);</span>
-<span class="nc" id="L39">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="nc" id="L40">                .query(sqlObtenerPorFactura, paramSource, mapeoProductoFacturar );</span>
+<span class="fc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L38">        paramSource.addValue(&quot;id_factura&quot;, idFactura);</span>
+<span class="fc" id="L39">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L40">                .query(sqlObtenerPorFactura, paramSource, mapeoProductoFacturar );</span>
     }
 
     private void guardar(ProductoFacturar productoFacturar, Long idFactura) {
-<span class="nc" id="L44">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L45">        paramSource.addValue(&quot;id_factura&quot;, idFactura);</span>
-<span class="nc" id="L46">        paramSource.addValue(&quot;id_producto&quot;, productoFacturar.getProducto().getId());</span>
-<span class="nc" id="L47">        paramSource.addValue(&quot;cantidad&quot;, productoFacturar.getCantidad());</span>
-<span class="nc" id="L48">        this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
-<span class="nc" id="L49">    }</span>
+<span class="fc" id="L44">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L45">        paramSource.addValue(&quot;id_factura&quot;, idFactura);</span>
+<span class="fc" id="L46">        paramSource.addValue(&quot;id_producto&quot;, productoFacturar.getProducto().getId());</span>
+<span class="fc" id="L47">        paramSource.addValue(&quot;cantidad&quot;, productoFacturar.getCantidad());</span>
+<span class="fc" id="L48">        this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="fc" id="L49">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

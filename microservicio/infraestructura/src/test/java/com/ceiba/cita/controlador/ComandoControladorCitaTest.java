@@ -2,6 +2,8 @@ package com.ceiba.cita.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.factura.controlador.ComandoFacturarTestDataBuilder;
+import com.ceiba.factura.controlador.RespuestaFacturar;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +17,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -40,7 +41,7 @@ public class ComandoControladorCitaTest {
         var comandoCitarTestDataBuilder = new ComandoCitarTestDataBuilder().crearPorDefecto().build();
 
         var resultado = mockMvc.perform(post("/cita")
-                        .contentType(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(comandoCitarTestDataBuilder)))
                 .andExpect(status().is2xxSuccessful()).andReturn();
 
@@ -50,12 +51,7 @@ public class ComandoControladorCitaTest {
         var citaGuardada = repositorioCita.obtenerPorId(respuesta.getValor());
 
         Assertions.assertEquals(LocalDate.parse("2022-06-14"), citaGuardada.getFechaCita());
-        Assertions.assertEquals(LocalTime.parse("08:03:00"), citaGuardada.getHoraCita());
-        Assertions.assertEquals("DIA", citaGuardada.getHorario());
-        Assertions.assertEquals(15.0, citaGuardada.getCosto());
     }
-
-
 
 
     @Test
