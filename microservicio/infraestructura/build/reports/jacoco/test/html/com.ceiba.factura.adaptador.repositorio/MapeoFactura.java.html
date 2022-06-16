@@ -17,10 +17,10 @@ public class MapeoFactura implements RowMapper&lt;Factura&gt;, MapperResult {
     private final RepositorioCliente repositorioCliente;
     private final RepositorioProductoFacturar repositorioProductoFacturar;
 
-<span class="fc" id="L20">    public MapeoFactura(RepositorioCliente repositorioCliente, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
-<span class="fc" id="L21">        this.repositorioCliente = repositorioCliente;</span>
-<span class="fc" id="L22">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
-<span class="fc" id="L23">    }</span>
+<span class="nc" id="L20">    public MapeoFactura(RepositorioCliente repositorioCliente, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
+<span class="nc" id="L21">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L22">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
+<span class="nc" id="L23">    }</span>
 
     @Override
     public Factura mapRow(ResultSet resultSet, int rowNum) throws SQLException {

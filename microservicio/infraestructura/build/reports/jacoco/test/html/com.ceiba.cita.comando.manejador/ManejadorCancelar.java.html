@@ -3,7 +3,6 @@
 import com.ceiba.cita.ComandoCancelar;
 import com.ceiba.cita.puerto.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCancelar;
-import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.manejador.ManejadorComando;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +12,14 @@ public class ManejadorCancelar implements ManejadorComando&lt;ComandoCancelar&gt
     private final ServicioCancelar servicioCancelar;
     private final RepositorioCita repositorioCita;
 
-<span class="fc" id="L16">    public ManejadorCancelar(RepositorioCita repositorioCita, ServicioCancelar servicioCancelar) {</span>
-<span class="fc" id="L17">        this.servicioCancelar = servicioCancelar;</span>
-<span class="fc" id="L18">        this.repositorioCita = repositorioCita;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L15">    public ManejadorCancelar(RepositorioCita repositorioCita, ServicioCancelar servicioCancelar) {</span>
+<span class="fc" id="L16">        this.servicioCancelar = servicioCancelar;</span>
+<span class="fc" id="L17">        this.repositorioCita = repositorioCita;</span>
+<span class="fc" id="L18">    }</span>
 
     @Override
     public void ejecutar(ComandoCancelar comandoCancelar) {
-<span class="nc" id="L23">        servicioCancelar.ejecutar(repositorioCita.obtenerPorId(comandoCancelar.getIdCita()));</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L22">        servicioCancelar.ejecutar(repositorioCita.obtenerPorId(comandoCancelar.getIdCita()));</span>
+<span class="fc" id="L23">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

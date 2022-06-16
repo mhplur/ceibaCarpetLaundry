@@ -2,12 +2,9 @@ package com.ceiba.cita.adaptador.repositorio;
 
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.puerto.RepositorioCita;
-import com.ceiba.client.entidad.Client;
-import com.ceiba.factura.adaptador.repositorio.MapeoProductoFacturar;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.tarifa.entidad.Tarifa;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 

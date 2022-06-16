@@ -17,10 +17,10 @@ public class FabricaSolicitudFacturar {
     private final RepositorioCliente repositorioCliente;
     private final RepositorioProducto repositorioProducto;
 
-<span class="fc" id="L20">    public FabricaSolicitudFacturar(RepositorioCliente repositorioCliente, RepositorioProducto repositorioProducto) {</span>
-<span class="fc" id="L21">        this.repositorioCliente = repositorioCliente;</span>
-<span class="fc" id="L22">        this.repositorioProducto = repositorioProducto;</span>
-<span class="fc" id="L23">    }</span>
+<span class="nc" id="L20">    public FabricaSolicitudFacturar(RepositorioCliente repositorioCliente, RepositorioProducto repositorioProducto) {</span>
+<span class="nc" id="L21">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L22">        this.repositorioProducto = repositorioProducto;</span>
+<span class="nc" id="L23">    }</span>
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
 <span class="nc" id="L26">        return new SolicitudFacturar(repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),</span>

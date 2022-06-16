@@ -16,9 +16,9 @@ public class RepositorioProductoMysql implements RepositorioProducto {
     @SqlStatement(namespace = &quot;producto&quot;, value = &quot;obtenerporid&quot;)
     private static String sqlObtenerPorId;
 
-<span class="fc" id="L19">    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L21">    }</span>
+<span class="nc" id="L19">    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="nc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="nc" id="L21">    }</span>
 
     @Override
     public Producto obtener(Long id) {

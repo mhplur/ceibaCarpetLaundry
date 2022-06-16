@@ -22,10 +22,10 @@ public class RepositorioProductoFacturarMysql implements RepositorioProductoFact
     @SqlStatement(namespace = &quot;productofacturar&quot;, value = &quot;obtenerporfactura&quot;)
     private static String sqlObtenerPorFactura;
 
-<span class="fc" id="L25">    public RepositorioProductoFacturarMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoProductoFacturar mapeoProductoFacturar) {</span>
-<span class="fc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L27">        this.mapeoProductoFacturar = mapeoProductoFacturar;</span>
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L25">    public RepositorioProductoFacturarMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoProductoFacturar mapeoProductoFacturar) {</span>
+<span class="nc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="nc" id="L27">        this.mapeoProductoFacturar = mapeoProductoFacturar;</span>
+<span class="nc" id="L28">    }</span>
 
     @Override
     public void guardarPorFactura(Factura factura, Long idFactura) {

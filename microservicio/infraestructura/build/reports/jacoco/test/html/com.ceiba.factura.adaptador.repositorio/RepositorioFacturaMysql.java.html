@@ -26,11 +26,11 @@ public class RepositorioFacturaMysql implements RepositorioFactura {
     @SqlStatement(namespace = &quot;factura&quot;, value = &quot;actualizarestado&quot;)
     private static String sqlActualizarEstado;
 
-<span class="fc" id="L29">    public RepositorioFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFactura mapeoFactura, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
-<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L31">        this.mapeoFactura = mapeoFactura;</span>
-<span class="fc" id="L32">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
-<span class="fc" id="L33">    }</span>
+<span class="nc" id="L29">    public RepositorioFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFactura mapeoFactura, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
+<span class="nc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="nc" id="L31">        this.mapeoFactura = mapeoFactura;</span>
+<span class="nc" id="L32">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
+<span class="nc" id="L33">    }</span>
 
     @Override
     public Long guardar(Factura factura) {

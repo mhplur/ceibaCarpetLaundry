@@ -13,10 +13,10 @@ public class ManejadorFacturar implements ManejadorComandoRespuesta&lt;ComandoSo
     private final FabricaSolicitudFacturar fabricaSolicitudFacturar;
     private final ServicioFacturar servicioFacturar;
 
-<span class="fc" id="L16">    public ManejadorFacturar(FabricaSolicitudFacturar fabricaSolicitudFacturar, ServicioFacturar servicioFacturar) {</span>
-<span class="fc" id="L17">        this.fabricaSolicitudFacturar = fabricaSolicitudFacturar;</span>
-<span class="fc" id="L18">        this.servicioFacturar = servicioFacturar;</span>
-<span class="fc" id="L19">    }</span>
+<span class="nc" id="L16">    public ManejadorFacturar(FabricaSolicitudFacturar fabricaSolicitudFacturar, ServicioFacturar servicioFacturar) {</span>
+<span class="nc" id="L17">        this.fabricaSolicitudFacturar = fabricaSolicitudFacturar;</span>
+<span class="nc" id="L18">        this.servicioFacturar = servicioFacturar;</span>
+<span class="nc" id="L19">    }</span>
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoSolicitudFacturar comandoSolicitudFacturar) {

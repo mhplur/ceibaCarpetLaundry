@@ -3,34 +3,20 @@
 import com.ceiba.cita.puerto.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCancelar;
 import com.ceiba.cita.servicio.ServicioCitar;
-import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
-import com.ceiba.factura.servicio.ServicioAnular;
-import com.ceiba.factura.servicio.ServicioFacturar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-<span class="fc" id="L13">public class BeanServicio {</span>
-
-
-    @Bean
-    public ServicioFacturar servicioFacturar(RepositorioFactura repositorioFactura) {
-<span class="fc" id="L18">        return new ServicioFacturar(repositorioFactura);</span>
-    }
-
-    @Bean
-    public ServicioAnular servicioAnular(RepositorioFactura repositorioFactura) {
-<span class="fc" id="L23">        return new ServicioAnular(repositorioFactura);</span>
-    }
+<span class="fc" id="L10">public class BeanServicio {</span>
 
     @Bean
     public ServicioCancelar servicioCancelar(RepositorioCita repositorioCita) {
-<span class="fc" id="L28">        return new ServicioCancelar(repositorioCita);</span>
+<span class="fc" id="L14">        return new ServicioCancelar(repositorioCita);</span>
     }
 
     @Bean
     public ServicioCitar servicioCitar(RepositorioCita repositorioCita) {
-<span class="fc" id="L33">        return new ServicioCitar(repositorioCita);</span>
+<span class="fc" id="L19">        return new ServicioCitar(repositorioCita);</span>
     }
 
 

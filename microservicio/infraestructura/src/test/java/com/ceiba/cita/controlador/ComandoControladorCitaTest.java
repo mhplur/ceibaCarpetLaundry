@@ -2,8 +2,6 @@ package com.ceiba.cita.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.cita.puerto.RepositorioCita;
-import com.ceiba.factura.controlador.ComandoFacturarTestDataBuilder;
-import com.ceiba.factura.controlador.RespuestaFacturar;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
