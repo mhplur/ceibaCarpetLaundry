@@ -22,13 +22,13 @@ public class Tarifa {
 <span class="nc" id="L22">    }</span>
 
     public static Tarifa reconstuir(Long id, String nombre, String codigo, Integer tiempoHoraSecado, Integer costoPorMetroCuadrado, Integer limpiezaProfunda) {
-<span class="nc" id="L25">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L26">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L27">        ValidadorArgumento.validarObligatorio(codigo, &quot;Codigo de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(tiempoHoraSecado, &quot;Tiempo hora de secado de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(costoPorMetroCuadrado, &quot;Costo por metro cuadrado de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L30">        ValidadorArgumento.validarObligatorio(limpiezaProfunda, &quot;Limpieza profunda de la tarifa es requerido&quot;);</span>
-<span class="nc" id="L31">        return new Tarifa(id, nombre, codigo, tiempoHoraSecado, costoPorMetroCuadrado, limpiezaProfunda);</span>
+<span class="fc" id="L25">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L27">        ValidadorArgumento.validarObligatorio(codigo, &quot;Codigo de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(tiempoHoraSecado, &quot;Tiempo hora de secado de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(costoPorMetroCuadrado, &quot;Costo por metro cuadrado de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(limpiezaProfunda, &quot;Limpieza profunda de la tarifa es requerido&quot;);</span>
+<span class="fc" id="L31">        return new Tarifa(id, nombre, codigo, tiempoHoraSecado, costoPorMetroCuadrado, limpiezaProfunda);</span>
     }
 
     public Long getId() {

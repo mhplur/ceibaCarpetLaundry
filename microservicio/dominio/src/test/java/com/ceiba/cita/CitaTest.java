@@ -14,7 +14,7 @@ import java.time.LocalTime;
 public class CitaTest {
 
     @Test
-    void deberiaReconstruirCitaExitosa() {
+    void deberiaCrearCitaExistosa() {
         Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
         Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
         var cita = new CitaTestDataBuilder()
@@ -35,30 +35,7 @@ public class CitaTest {
         Assertions.assertEquals("DIA", cita.getHorario());
         Assertions.assertEquals(1, cita.getEstado());
         Assertions.assertEquals(15.0, cita.getCosto());
-    }
 
-    @Test
-    void deberiaCrearCitaExitosa() {
-        Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
-        Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
-        var cita = new CitaTestDataBuilder()
-                .conId(1l)
-                .conClient(client)
-                .conTarifa(tarifa)
-                .conFechaCita(LocalDate.parse("2022-09-17"))
-                .conHoraCita(LocalTime.parse("08:00:00"))
-                .conHorario("DIA")
-                .conEstado(1)
-                .conCosto(15.0).crear();
-
-        Assertions.assertEquals(1l, cita.getId());
-        deberiaCrearTarifaExitosa(tarifa, cita);
-        deberiaCrearClienteExitosa(client, cita);
-        Assertions.assertEquals(LocalDate.parse("2022-09-17"), cita.getFechaCita());
-        Assertions.assertEquals(LocalTime.parse("08:00:00"), cita.getHoraCita());
-        Assertions.assertEquals("DIA", cita.getHorario());
-        Assertions.assertEquals(1, cita.getEstado());
-        Assertions.assertEquals(0.0, cita.getCosto());
     }
 
     private void deberiaCrearClienteExitosa(Client client, Cita cita) {

@@ -27,13 +27,13 @@ public class ComandoControladorFactura {
     @PostMapping
     @Operation(summary = &quot;Facturar&quot;, description = &quot;Metodo utilizado para crear una nueva factura&quot;)
     public ComandoRespuesta&lt;Long&gt; facturar(@RequestBody ComandoSolicitudFacturar comandoSolicitudFacturar) {
-<span class="nc" id="L30">        return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);</span>
+<span class="fc" id="L30">        return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);</span>
     }
 
     @PostMapping(&quot;anular/{id-factura}&quot;)
     @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para anular una nueva factura&quot;)
     public void anular(@PathVariable(&quot;id-factura&quot;) Long idFactura) {
-<span class="nc" id="L36">        this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L36">        this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));</span>
+<span class="fc" id="L37">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

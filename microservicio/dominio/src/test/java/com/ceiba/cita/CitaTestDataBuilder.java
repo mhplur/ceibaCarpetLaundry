@@ -77,17 +77,6 @@ public class CitaTestDataBuilder {
         return this;
     }
 
-    public Cita crear() {
-        return Cita.crear(new SolicitarCitaTestDataBuilder()
-                .conClient(client)
-                .conTarifa(tarifa)
-                .conFechaCita(fechaCita)
-                .conHoraCita(horaCita)
-                .conHorario(horario)
-                .build());
-    }
-
-
     public Cita reconstruir() {
         return Cita.reconstruir(id, client, tarifa, fechaCita, horaCita, horario, estado, costo);
     }

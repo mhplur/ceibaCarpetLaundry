@@ -22,10 +22,10 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 
     @Override
     public Cliente obtener(Long id) {
-<span class="nc" id="L25">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L26">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L27">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
-<span class="nc" id="L28">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
+<span class="fc" id="L25">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L26">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L27">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
+<span class="fc" id="L28">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
                         paramSource, new MapeoCliente()));
     }
 
