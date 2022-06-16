@@ -14,8 +14,6 @@ public class Client {
 
     private String direccion;
 
-
-
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
         ValidadorArgumento.validarObligatorio(id, "Id del cliente es requerida");
         ValidadorArgumento.validarObligatorio(identificacionPersonal, "Identificacion del cliente es requerida");
@@ -32,24 +30,15 @@ public class Client {
         return identificacionPersonal;
     }
 
-    public void setIdentificacionPersonal(String identificacionPersonal) {
-        this.identificacionPersonal = identificacionPersonal;
-    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
 }
 

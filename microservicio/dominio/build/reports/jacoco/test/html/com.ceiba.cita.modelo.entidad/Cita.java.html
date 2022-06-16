@@ -74,18 +74,18 @@ public class Cita {
     }
 
     public void cancelar() {
-<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (this.estado == 0) {</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if (this.estado == 0) {</span>
 <span class="nc" id="L78">            throw new ExcepcionValorInvalido(&quot;La cita ya se encuentra cancelada &quot;);</span>
         }
-<span class="nc" id="L80">        this.estado = 0;</span>
-<span class="nc" id="L81">    }</span>
+<span class="fc" id="L80">        this.estado = 0;</span>
+<span class="fc" id="L81">    }</span>
 
     public Long getId() {
-<span class="fc" id="L84">        return id;</span>
+<span class="nc" id="L84">        return id;</span>
     }
 
     public Client getClient() {
-<span class="fc" id="L88">        return client;</span>
+<span class="nc" id="L88">        return client;</span>
     }
 
     public void setClient(Client client) {
@@ -93,51 +93,35 @@ public class Cita {
 <span class="nc" id="L93">    }</span>
 
     public Tarifa getTarifa() {
-<span class="fc" id="L96">        return tarifa;</span>
+<span class="nc" id="L96">        return tarifa;</span>
     }
-
-    public void setTarifa(Tarifa tarifa) {
-<span class="nc" id="L100">        this.tarifa = tarifa;</span>
-<span class="nc" id="L101">    }</span>
 
     public LocalDate getFechaCita() {
-<span class="fc" id="L104">        return fechaCita;</span>
+<span class="nc" id="L100">        return fechaCita;</span>
     }
-
-    public void setFechaCita(LocalDate fechaCita) {
-<span class="nc" id="L108">        this.fechaCita = fechaCita;</span>
-<span class="nc" id="L109">    }</span>
 
     public LocalTime getHoraCita() {
-<span class="fc" id="L112">        return horaCita;</span>
+<span class="nc" id="L104">        return horaCita;</span>
     }
-
-    public void setHoraCita(LocalTime horaCita) {
-<span class="nc" id="L116">        this.horaCita = horaCita;</span>
-<span class="nc" id="L117">    }</span>
 
     public String getHorario() {
-<span class="fc" id="L120">        return horario;</span>
+<span class="nc" id="L108">        return horario;</span>
     }
 
-    public void setHorario(String horario) {
-<span class="nc" id="L124">        this.horario = horario;</span>
-<span class="nc" id="L125">    }</span>
-
     public Integer getEstado() {
-<span class="fc" id="L128">        return estado;</span>
+<span class="fc" id="L112">        return estado;</span>
     }
 
     public void setEstado(Integer estado) {
-<span class="nc" id="L132">        this.estado = estado;</span>
-<span class="nc" id="L133">    }</span>
+<span class="nc" id="L116">        this.estado = estado;</span>
+<span class="nc" id="L117">    }</span>
 
     public Double getCosto() {
-<span class="fc" id="L136">        return costo;</span>
+<span class="nc" id="L120">        return costo;</span>
     }
 
     public void setCosto(Double costo) {
-<span class="nc" id="L140">        this.costo = costo;</span>
-<span class="nc" id="L141">    }</span>
+<span class="nc" id="L124">        this.costo = costo;</span>
+<span class="nc" id="L125">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

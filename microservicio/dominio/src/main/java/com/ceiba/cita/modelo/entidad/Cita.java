@@ -96,32 +96,16 @@ public class Cita {
         return tarifa;
     }
 
-    public void setTarifa(Tarifa tarifa) {
-        this.tarifa = tarifa;
-    }
-
     public LocalDate getFechaCita() {
         return fechaCita;
-    }
-
-    public void setFechaCita(LocalDate fechaCita) {
-        this.fechaCita = fechaCita;
     }
 
     public LocalTime getHoraCita() {
         return horaCita;
     }
 
-    public void setHoraCita(LocalTime horaCita) {
-        this.horaCita = horaCita;
-    }
-
     public String getHorario() {
         return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
     }
 
     public Integer getEstado() {

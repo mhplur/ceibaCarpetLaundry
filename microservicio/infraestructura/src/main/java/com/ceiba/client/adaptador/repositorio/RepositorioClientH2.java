@@ -12,7 +12,6 @@ import java.util.List;
 
 @Repository
 public class RepositorioClientH2 implements RepositorioClient {
-    //TODO OK
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     private final MapeoClient mapeoClient;
@@ -39,7 +38,6 @@ public class RepositorioClientH2 implements RepositorioClient {
 
     @Override
     public Client obtenerPorIdentificacionPersonal(String identificacionPersonal) {
-        //TODO PILAS AQUI
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("identificacionPersonal", identificacionPersonal);
 
