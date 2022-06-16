@@ -4,21 +4,21 @@ import java.time.LocalTime;
 
 <span class="nc" id="L5">public class UtilTime {</span>
 
-<span class="nc" id="L7">    private static final LocalTime CONS_MIDNIGHT = LocalTime.parse(&quot;23:59:59&quot;);</span>
-<span class="nc" id="L8">    private static final LocalTime CONS_DAY = LocalTime.parse(&quot;00:00:00&quot;);</span>
-<span class="nc" id="L9">    private static LocalTime CONS_START_DAY = LocalTime.parse(&quot;06:00:00&quot;);</span>
-<span class="nc" id="L10">    private static LocalTime CONS_END_DAY = LocalTime.parse(&quot;18:00:00&quot;);</span>
-<span class="nc" id="L11">    private static LocalTime CONS_START_NIGHT = LocalTime.parse(&quot;20:00:00&quot;);</span>
-<span class="nc" id="L12">    private static LocalTime CONS_END_NIGHT = LocalTime.parse(&quot;04:00:00&quot;);</span>
+<span class="fc" id="L7">    private static final LocalTime CONS_MIDNIGHT = LocalTime.parse(&quot;23:59:59&quot;);</span>
+<span class="fc" id="L8">    private static final LocalTime CONS_DAY = LocalTime.parse(&quot;00:00:00&quot;);</span>
+<span class="fc" id="L9">    private static LocalTime CONS_START_DAY = LocalTime.parse(&quot;06:00:00&quot;);</span>
+<span class="fc" id="L10">    private static LocalTime CONS_END_DAY = LocalTime.parse(&quot;18:00:00&quot;);</span>
+<span class="fc" id="L11">    private static LocalTime CONS_START_NIGHT = LocalTime.parse(&quot;20:00:00&quot;);</span>
+<span class="fc" id="L12">    private static LocalTime CONS_END_NIGHT = LocalTime.parse(&quot;04:00:00&quot;);</span>
 
     public static boolean checkAllRangeTime(LocalTime dateTime) {
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        return checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY) ||</span>
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        return checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY) ||</span>
 <span class="nc bnc" id="L16" title="All 2 branches missed.">                checkRangeNightTime(dateTime, CONS_START_NIGHT, CONS_END_NIGHT) ?</span>
-<span class="nc" id="L17">                true : false;</span>
+<span class="pc" id="L17">                true : false;</span>
     }
 
     private static boolean checkRangeDayTime(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
-<span class="nc" id="L21">        return checkRange(dateTime, startRange, endRange);</span>
+<span class="fc" id="L21">        return checkRange(dateTime, startRange, endRange);</span>
     }
 
     private static boolean checkRangeNightTime(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
@@ -28,11 +28,11 @@ import java.time.LocalTime;
     }
 
     private static boolean checkRange(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
-<span class="nc" id="L31">        int startValue = dateTime.compareTo(startRange);</span>
-<span class="nc" id="L32">        int endValue = dateTime.compareTo(endRange);</span>
+<span class="fc" id="L31">        int startValue = dateTime.compareTo(startRange);</span>
+<span class="fc" id="L32">        int endValue = dateTime.compareTo(endRange);</span>
 
-<span class="nc bnc" id="L34" title="All 8 branches missed.">        return (startValue &gt; 0 || startValue == 0) &amp;&amp; (endValue &lt; 0 || endValue == 0) ?</span>
-<span class="nc" id="L35">                true : false;</span>
+<span class="pc bpc" id="L34" title="6 of 8 branches missed.">        return (startValue &gt; 0 || startValue == 0) &amp;&amp; (endValue &lt; 0 || endValue == 0) ?</span>
+<span class="pc" id="L35">                true : false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
