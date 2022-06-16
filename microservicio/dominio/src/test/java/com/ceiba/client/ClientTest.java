@@ -14,10 +14,11 @@ public class ClientTest {
                 .conIdentificacionPersonal("001")
                 .conNombre("MILTON PAREDES")
                 .conDireccion("QUITO").reconstruir();
-        Assertions.assertEquals(1l, client.getId());
+
+        Assertions.assertEquals("QUITO", client.getDireccion());
         Assertions.assertEquals("001", client.getIdentificacionPersonal());
         Assertions.assertEquals("MILTON PAREDES", client.getNombre());
-        Assertions.assertEquals("QUITO", client.getDireccion());
+        Assertions.assertEquals(1l, client.getId());
     }
 
     @Test
