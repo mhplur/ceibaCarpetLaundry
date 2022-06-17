@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.producto.ProductoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-16T04:57:32" hostname="DESKTOP-SJD26V0" time="0.022">
+<testsuite name="com.ceiba.producto.ProductoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-17T03:13:13" hostname="DESKTOP-SJD26V0" time="0.019">
   <properties/>
-  <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.002"/>
-  <testcase name="reconstruirSinAplicaIvadeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.002"/>
-  <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.003"/>
-  <testcase name="deberiaReconstruirProductoExitosamente()" classname="com.ceiba.producto.ProductoTest" time="0.002"/>
-  <testcase name="reconstruirSinValorIvadeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.007"/>
+  <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.004"/>
+  <testcase name="reconstruirSinAplicaIvadeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.001"/>
+  <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.002"/>
+  <testcase name="deberiaReconstruirProductoExitosamente()" classname="com.ceiba.producto.ProductoTest" time="0.004"/>
+  <testcase name="reconstruirSinValorIvadeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

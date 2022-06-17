@@ -8,31 +8,32 @@ import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.factura.servicio.ServicioFacturar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-<span class="fc" id="L13">public class BeanServicio {</span>
+<span class="fc" id="L15">public class BeanServicio {</span>
 
 
     @Bean
     public ServicioFacturar servicioFacturar(RepositorioFactura repositorioFactura) {
-<span class="fc" id="L18">        return new ServicioFacturar(repositorioFactura);</span>
+<span class="fc" id="L20">        return new ServicioFacturar(repositorioFactura);</span>
     }
 
     @Bean
     public ServicioAnular servicioAnular(RepositorioFactura repositorioFactura) {
-<span class="fc" id="L23">        return new ServicioAnular(repositorioFactura);</span>
+<span class="fc" id="L25">        return new ServicioAnular(repositorioFactura);</span>
     }
 
     @Bean
     public ServicioCancelar servicioCancelar(RepositorioCita repositorioCita) {
-<span class="fc" id="L28">        return new ServicioCancelar(repositorioCita);</span>
+<span class="fc" id="L30">        return new ServicioCancelar(repositorioCita);</span>
     }
 
     @Bean
     public ServicioCitar servicioCitar(RepositorioCita repositorioCita) {
-<span class="fc" id="L33">        return new ServicioCitar(repositorioCita);</span>
+<span class="fc" id="L35">        return new ServicioCitar(repositorioCita);</span>
     }
-
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

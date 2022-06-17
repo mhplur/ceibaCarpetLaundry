@@ -7,13 +7,11 @@ import com.ceiba.client.entidad.Client;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = {&quot;http://localhost:4200&quot;})
 @RestController
 @RequestMapping(&quot;/cliente&quot;)
 @Tag(name = &quot;Controlador consulta client&quot;)
@@ -27,28 +25,28 @@ public class ConsultaControladorClient {
 
     private ConsultaControladorClient(ManejadorConsultaClientes manejadorConsultaClientes,
                                       ManejadorConsultaClientesPorIdentificacionPersonal manejadorConsultaClientesPorIdentificacionPersonal,
-<span class="fc" id="L30">    ManejadorConsultaClientesPorId manejadorConsultaClientesPorId) {</span>
-<span class="fc" id="L31">        this.manejadorConsultaClientes = manejadorConsultaClientes;</span>
-<span class="fc" id="L32">        this.manejadorConsultaClientesPorIdentificacionPersonal = manejadorConsultaClientesPorIdentificacionPersonal;</span>
-<span class="fc" id="L33">        this.manejadorConsultaClientesPorId = manejadorConsultaClientesPorId;</span>
-<span class="fc" id="L34">    }</span>
+<span class="fc" id="L28">                                      ManejadorConsultaClientesPorId manejadorConsultaClientesPorId) {</span>
+<span class="fc" id="L29">        this.manejadorConsultaClientes = manejadorConsultaClientes;</span>
+<span class="fc" id="L30">        this.manejadorConsultaClientesPorIdentificacionPersonal = manejadorConsultaClientesPorIdentificacionPersonal;</span>
+<span class="fc" id="L31">        this.manejadorConsultaClientesPorId = manejadorConsultaClientesPorId;</span>
+<span class="fc" id="L32">    }</span>
 
     @GetMapping(&quot;todos&quot;)
     @Operation(summary = &quot;Todos&quot;, description = &quot;Metodo utilizado para consultar todos los clientes&quot;)
     public List&lt;Client&gt; obtenerTodos() {
-<span class="fc" id="L39">        return manejadorConsultaClientes.ejecutar();</span>
+<span class="fc" id="L37">        return manejadorConsultaClientes.ejecutar();</span>
     }
 
     @GetMapping(&quot;obtenerPorIdentificacionPersonal/{identificacion-personal}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar un Cliente por su identificacion personal&quot;)
     public Client obtenerPorIdentificacionPersonal(@PathVariable(&quot;identificacion-personal&quot;) String identificacionPersonal) {
-<span class="fc" id="L45">        return this.manejadorConsultaClientesPorIdentificacionPersonal.ejecutar(identificacionPersonal);</span>
+<span class="fc" id="L43">        return this.manejadorConsultaClientesPorIdentificacionPersonal.ejecutar(identificacionPersonal);</span>
     }
 
     @GetMapping(&quot;obtenerPorId/{id}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar un Cliente por su id&quot;)
     public Client obtenerPorId(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L51">        return this.manejadorConsultaClientesPorId.ejecutar(id);</span>
+<span class="fc" id="L49">        return this.manejadorConsultaClientesPorId.ejecutar(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
