@@ -30,15 +30,17 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
+        checkout scm
       }
     }
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-        sh 'chmod +x ./microservicio/gradlew'
-        sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
-        sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+          sh 'chmod +x ./gradlew'
+          sh './gradlew build -x test'
+          sh './gradlew clean'
+          sh './gradlew test'
       }
     }
 
