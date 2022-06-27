@@ -33,22 +33,29 @@ pipeline {
         checkout scm
       }
     }
+
+    stage('Clean') {
+      steps{
+        echo "------------>Clean<------------"
+        sh 'chmod +x ./microservicio/gradlew'
+        sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+      }
+    }
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-          sh 'chmod +x ./comun/gradlew'
-          sh './comun/gradlew build -x test'
-          sh './comun/gradlew clean'
-          sh './comun/gradlew test'
+        sh 'chmod +x ./microservicio/gradlew'
+        sh './microservicio/gradlew --b ./microservicio/build.gradle test'
       }
     }
 
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:lavadoralfombra-milton.paredes',
-        sonarName:'''"CeibaADN-lavadoralfombra(milton.paredes)"''',
+        sonarqubeMasQualityGatesP(
+        sonarKey:'co.com.ceiba.adn:lavadoralfombra-milton.paredes',
+        sonarName:'CeibaADN-lavadoralfombra(milton.paredes)',
         sonarPathProperties:'./sonar-project.properties')
       }
     }
