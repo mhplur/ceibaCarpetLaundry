@@ -25,6 +25,7 @@ hora_cita time not null,
 horario varchar(11) not null,
 estado integer not null,
 costo DECIMAL(10,2) not null,
+metros_cuadrados TINYINT not null,
  primary key (id)
 );
 

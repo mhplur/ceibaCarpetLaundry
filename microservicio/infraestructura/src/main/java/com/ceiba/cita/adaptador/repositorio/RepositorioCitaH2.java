@@ -1,13 +1,11 @@
 package com.ceiba.cita.adaptador.repositorio;
 
+import com.ceiba.cita.modelo.dto.CitaResumenDto;
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cita.puerto.RepositorioCita;
-import com.ceiba.client.entidad.Client;
-import com.ceiba.factura.adaptador.repositorio.MapeoProductoFacturar;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.tarifa.entidad.Tarifa;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -56,6 +54,7 @@ public class RepositorioCitaH2 implements RepositorioCita {
         paramSource.addValue("horario", cita.getHorario());
         paramSource.addValue("estado", cita.getEstado());
         paramSource.addValue("costo", cita.getCosto());
+        paramSource.addValue("metros_cuadrados", cita.getMetrosCuadrados());
         return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
     }
 

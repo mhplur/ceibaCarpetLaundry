@@ -27,7 +27,7 @@ public class ConsultaControladorCitaTest {
 
     @Test
     void obtenerTodasActivas() throws Exception {
-        mockMvc.perform(get("/cita/todas")
+        mockMvc.perform(get("/cita/activa")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("$[0].horaCita", is("08:00:00")))

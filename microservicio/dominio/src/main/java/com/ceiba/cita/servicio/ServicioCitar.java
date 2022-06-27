@@ -3,7 +3,7 @@ package com.ceiba.cita.servicio;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.modelo.entidad.HorarioPrecio;
 import com.ceiba.cita.modelo.entidad.SolicitarCita;
-import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 
 import java.util.List;
 
@@ -25,6 +25,7 @@ public class ServicioCitar {
             cita.setCosto(getCost(solicitarCita));
             return repositorioCita.guardar(cita);
         }
+        //TODO ADD EXCEPTION
         return 0l;
     }
 
@@ -47,7 +48,7 @@ public class ServicioCitar {
             cost = getCostNormal(costoPorMetroCuadrado, horario);
         }
 
-        return cost;
+        return cost * solicitarCita.getMetrosCuadrados();
     }
 
 

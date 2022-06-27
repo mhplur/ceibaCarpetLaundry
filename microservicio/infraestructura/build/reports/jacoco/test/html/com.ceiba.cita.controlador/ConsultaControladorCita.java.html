@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConsultaControladorCita.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.cita.controlador</a> &gt; <span class="el_source">ConsultaControladorCita.java</span></div><h1>ConsultaControladorCita.java</h1><pre class="source lang-java linenums">package com.ceiba.cita.controlador;
 
 import com.ceiba.cita.consulta.ManejadorConsultaCitasPorId;
+import com.ceiba.cita.modelo.dto.CitaResumenDto;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.consulta.ManejadorConsultarCitas;
 import com.ceiba.tarifa.entidad.Tarifa;
@@ -21,21 +22,21 @@ public class ConsultaControladorCita {
     private final ManejadorConsultaCitasPorId manejadorConsultaCitasPorId;
 
     public ConsultaControladorCita(ManejadorConsultarCitas manejadorConsultarCitas,
-<span class="fc" id="L24">            ManejadorConsultaCitasPorId manejadorConsultaCitasPorId) {</span>
-<span class="fc" id="L25">        this.manejadorConsultarCitas = manejadorConsultarCitas;</span>
-<span class="fc" id="L26">        this.manejadorConsultaCitasPorId = manejadorConsultaCitasPorId;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L25">            ManejadorConsultaCitasPorId manejadorConsultaCitasPorId) {</span>
+<span class="fc" id="L26">        this.manejadorConsultarCitas = manejadorConsultarCitas;</span>
+<span class="fc" id="L27">        this.manejadorConsultaCitasPorId = manejadorConsultaCitasPorId;</span>
+<span class="fc" id="L28">    }</span>
 
-    @GetMapping(&quot;todas&quot;)
-    @Operation(summary = &quot;Obtener&quot;, description = &quot;Obtener todas las citas &quot;)
-    public List&lt;Cita&gt; obtenerTodas() {
-<span class="fc" id="L32">        return manejadorConsultarCitas.ejecutar();</span>
+    @GetMapping(&quot;activa&quot;)
+    @Operation(summary = &quot;Obtener&quot;, description = &quot;Metodo utilizado para obtener todas las citas que se encuentren activas &quot;)
+    public List&lt;CitaResumenDto&gt; obtenerTodas() {
+<span class="fc" id="L33">        return manejadorConsultarCitas.ejecutar();</span>
     }
 
     @GetMapping(&quot;obtenerPorId/{id}&quot;)
     @Operation(summary = &quot;Buscar&quot;, description = &quot;Metodo utilizado para buscar una Cita por su id&quot;)
     public Cita obtenerPorId(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L38">        return this.manejadorConsultaCitasPorId.ejecutar(id);</span>
+<span class="fc" id="L39">        return this.manejadorConsultaCitasPorId.ejecutar(id);</span>
     }
 
 }

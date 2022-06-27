@@ -1,7 +1,7 @@
 package com.ceiba.cita.consulta;
 
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import org.springframework.stereotype.Component;
 
 @Component

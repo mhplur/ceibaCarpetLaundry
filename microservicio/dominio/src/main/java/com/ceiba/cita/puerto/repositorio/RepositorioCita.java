@@ -1,4 +1,4 @@
-package com.ceiba.cita.puerto;
+package com.ceiba.cita.puerto.repositorio;
 
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.client.entidad.Client;

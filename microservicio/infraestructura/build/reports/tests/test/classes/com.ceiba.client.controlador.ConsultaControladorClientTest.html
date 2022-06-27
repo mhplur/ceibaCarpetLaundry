@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.868s</div>
+<div class="counter">0.744s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">consultarPorId()</td>
-<td class="success">0.333s</td>
+<td class="success">0.239s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">consultarPorIdentificacionPersonal()</td>
-<td class="success">0.264s</td>
+<td class="success">0.262s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">consultarTodosLosClientes()</td>
-<td class="success">0.271s</td>
+<td class="success">0.243s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,9 +97,9 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2022-06-16 22:14:16.038  INFO 14184 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.client.controlador.ConsultaControladorClientTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2022-06-16 22:14:16.051  INFO 14184 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2022-06-16 22:14:16.052  INFO 14184 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7d4a7c54, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@471c315f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@51849f9f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4b84f4f2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6502990a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4332da3c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@363fcda2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5af08cf3, org.springframework.test.context.event.EventPublishingTestExecutionListener@2bcb946e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7efd4811, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3667d8b1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@68ae5d9a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1fb1dc05, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@b18a222, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3b251a0]
+<pre>2022-06-27 16:03:09.058  INFO 10544 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.client.controlador.ConsultaControladorClientTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-06-27 16:03:09.065  INFO 10544 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-06-27 16:03:09.065  INFO 10544 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@23ce061d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1374a4cc, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6698105f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6f8e5fee, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3c2352ec, org.springframework.test.context.support.DirtiesContextTestExecutionListener@a47d360, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2cfb309f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@31176bc1, org.springframework.test.context.event.EventPublishingTestExecutionListener@1705fb3d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@236df66e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@56e75554, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5ca4752a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6440b190, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2852e5f0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4473485b]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -109,25 +109,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.7)
 
-2022-06-16 22:14:16.269  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 14184 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-06-16 22:14:16.271  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-16 22:14:17.563  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-16 22:14:17.585  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-16 22:14:18.240  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-16 22:14:18.265  INFO 14184 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-16 22:14:18.279  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.005s)
-2022-06-16 22:14:18.318  INFO 14184 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-16 22:14:18.364  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-16 22:14:18.378  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-16 22:14:18.564  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-16 22:14:18.822  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.465s)
-2022-06-16 22:14:20.902  INFO 14184 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-16 22:14:20.903  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-16 22:14:20.904  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-16 22:14:21.014  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 4.954 seconds (JVM running for 59.354)
-2022-06-16 22:14:21.097  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-16 22:14:21.303  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-16 22:14:21.306  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-06-27 16:03:09.175  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 10544 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-06-27 16:03:09.175  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-06-27 16:03:09.575  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-27 16:03:09.583  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-27 16:03:09.825  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-27 16:03:09.838  INFO 10544 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-27 16:03:09.868  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2022-06-27 16:03:09.875  INFO 10544 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2022-06-27 16:03:09.894  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2022-06-27 16:03:09.899  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
+2022-06-27 16:03:09.953  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
+2022-06-27 16:03:09.985  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.098s)
+2022-06-27 16:03:11.098  INFO 10544 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-27 16:03:11.103  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-27 16:03:11.106  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2022-06-27 16:03:11.134  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 2.056 seconds (JVM running for 29.213)
+2022-06-27 16:03:11.169  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-27 16:03:11.394  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-27 16:03:11.403  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -137,25 +137,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.7)
 
-2022-06-16 22:14:21.425  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 14184 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-06-16 22:14:21.427  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-16 22:14:22.573  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-16 22:14:22.582  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-16 22:14:23.251  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-16 22:14:23.270  INFO 14184 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-16 22:14:23.287  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.008s)
-2022-06-16 22:14:23.293  INFO 14184 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-16 22:14:23.339  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-16 22:14:23.346  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-16 22:14:23.528  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-16 22:14:23.635  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.308s)
-2022-06-16 22:14:25.675  INFO 14184 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-16 22:14:25.675  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-16 22:14:25.676  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-16 22:14:25.699  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 4.387 seconds (JVM running for 64.039)
-2022-06-16 22:14:25.756  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-16 22:14:25.972  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-16 22:14:25.977  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-06-27 16:03:11.493  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 10544 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-06-27 16:03:11.493  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-06-27 16:03:11.947  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-27 16:03:11.955  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-27 16:03:12.215  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-27 16:03:12.230  INFO 10544 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-27 16:03:12.245  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.005s)
+2022-06-27 16:03:12.253  INFO 10544 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2022-06-27 16:03:12.272  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2022-06-27 16:03:12.278  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
+2022-06-27 16:03:12.332  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
+2022-06-27 16:03:12.364  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.097s)
+2022-06-27 16:03:13.285  INFO 10544 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-27 16:03:13.285  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-27 16:03:13.285  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-06-27 16:03:13.305  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 1.897 seconds (JVM running for 31.386)
+2022-06-27 16:03:13.335  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-27 16:03:13.554  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-27 16:03:13.554  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -165,25 +165,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.7)
 
-2022-06-16 22:14:26.080  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 14184 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-06-16 22:14:26.081  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-06-16 22:14:26.514  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-16 22:14:26.525  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-16 22:14:26.763  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-16 22:14:26.797  INFO 14184 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-16 22:14:26.818  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.009s)
-2022-06-16 22:14:26.852  INFO 14184 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2022-06-16 22:14:26.924  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2022-06-16 22:14:26.931  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
-2022-06-16 22:14:26.996  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
-2022-06-16 22:14:27.045  INFO 14184 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.143s)
-2022-06-16 22:14:29.413  INFO 14184 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-16 22:14:29.413  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-16 22:14:29.415  INFO 14184 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-06-16 22:14:29.465  INFO 14184 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 3.481 seconds (JVM running for 67.805)
-2022-06-16 22:14:29.582  INFO 14184 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-16 22:14:29.804  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-16 22:14:29.806  INFO 14184 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-06-27 16:03:13.628  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Starting ConsultaControladorClientTest using Java 13.0.2 on DESKTOP-SJD26V0 with PID 10544 (started by MILTON-PC in C:\DEV_MODE\WORSPACES\INTELLIJ_WORKSPACE\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-06-27 16:03:13.628  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-06-27 16:03:13.958  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-06-27 16:03:13.965  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-06-27 16:03:14.218  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-06-27 16:03:14.235  INFO 10544 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-06-27 16:03:14.248  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.008s)
+2022-06-27 16:03:14.254  INFO 10544 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2022-06-27 16:03:14.274  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2022-06-27 16:03:14.279  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.0 - schema
+2022-06-27 16:03:14.327  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version 1.1 - data
+2022-06-27 16:03:14.354  INFO 10544 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema &quot;PUBLIC&quot; (execution time 00:00.085s)
+2022-06-27 16:03:15.241  INFO 10544 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-06-27 16:03:15.241  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-06-27 16:03:15.243  INFO 10544 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2022-06-27 16:03:15.270  INFO 10544 --- [    Test worker] c.c.c.c.ConsultaControladorClientTest    : Started ConsultaControladorClientTest in 1.709 seconds (JVM running for 33.35)
+2022-06-27 16:03:15.303  INFO 10544 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-06-27 16:03:15.515  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-06-27 16:03:15.515  INFO 10544 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 </pre>
 </span>
 </div>
@@ -195,7 +195,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at 16 jun. 2022 22:14:42</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at 27 jun. 2022 16:03:25</p>
 </div>
 </div>
 </body>

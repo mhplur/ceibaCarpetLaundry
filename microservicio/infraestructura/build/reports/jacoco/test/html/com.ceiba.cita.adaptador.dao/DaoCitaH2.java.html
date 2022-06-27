@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DaoCitaH2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.cita.adaptador.dao</a> &gt; <span class="el_source">DaoCitaH2.java</span></div><h1>DaoCitaH2.java</h1><pre class="source lang-java linenums">package com.ceiba.cita.adaptador.dao;
+
+import com.ceiba.cita.modelo.dto.CitaResumenDto;
+import com.ceiba.cita.puerto.dao.DaoCita;
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class DaoCitaH2 implements DaoCita {
+
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+    private final MapeoCitaResumen mapeoCitaResumen;
+
+    @SqlStatement(namespace = &quot;cita&quot;, value = &quot;obtenertodasactivas&quot;)
+    private static String sqlObtenerTodasActivas;
+
+<span class="fc" id="L20">    public DaoCitaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoCitaResumen mapeoCitaResumen) {</span>
+<span class="fc" id="L21">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L22">        this.mapeoCitaResumen = mapeoCitaResumen;</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public List&lt;CitaResumenDto&gt; obtenerCitaResumenActivas() {
+<span class="fc" id="L27">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L28">                .query(sqlObtenerTodasActivas, mapeoCitaResumen);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

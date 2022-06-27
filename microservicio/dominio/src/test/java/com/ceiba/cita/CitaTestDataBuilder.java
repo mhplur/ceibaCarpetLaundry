@@ -25,6 +25,8 @@ public class CitaTestDataBuilder {
 
     private Double costo;
 
+    private Integer metrosCuadrados;
+
     public CitaTestDataBuilder conCitaPorDefecto() {
         this.id = 1l;
         this.client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
@@ -34,6 +36,7 @@ public class CitaTestDataBuilder {
         this.horario = "DIA";
         this.estado = 1;
         this.costo = 15.0;
+        this.metrosCuadrados = 1;
         return this;
     }
 
@@ -77,8 +80,13 @@ public class CitaTestDataBuilder {
         return this;
     }
 
+    public CitaTestDataBuilder conMetrosCuadrados(Integer metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+        return this;
+    }
+
     public Cita reconstruir() {
-        return Cita.reconstruir(id, client, tarifa, fechaCita, horaCita, horario, estado, costo);
+        return Cita.reconstruir(id, client, tarifa, fechaCita, horaCita, horario, estado, costo, metrosCuadrados);
     }
 
 

@@ -1,7 +1,6 @@
 package com.ceiba.cita.adaptador.repositorio;
 
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cita.puerto.RepositorioCita;
 import com.ceiba.client.puerto.RepositorioClient;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.tarifa.puerto.RepositorioTarifa;
@@ -37,10 +36,11 @@ public class MapeoCita implements RowMapper<Cita>, MapperResult {
         var horario = resultSet.getString("horario");
         var estado = resultSet.getInt("estado");
         var costo = resultSet.getDouble("costo");
+        var metrosCuadrados = resultSet.getInt("metros_cuadrados");
 
         return Cita.reconstruir(id, repositorioClient.obtenerPorId(idCliente),
                 repositorioTarifa.obtenerPorId(idTarifa), LocalDate.parse(fechaCita),
-                LocalTime.parse(horaCita), horario, estado, costo);
+                LocalTime.parse(horaCita), horario, estado, costo, metrosCuadrados);
     }
 
 

@@ -6,7 +6,9 @@ import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.tarifa.entidad.Tarifa;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 
 public class Cita {
 
@@ -26,11 +28,14 @@ public class Cita {
 
     private Double costo;
 
+    private Integer metrosCuadrados;
+
     public Cita() {
         super();
     }
 
-    public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
+    public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado,
+                Double costo, Integer metrosCuadrados) {
         this.id = id;
         this.client = client;
         this.tarifa = tarifa;
@@ -39,37 +44,44 @@ public class Cita {
         this.horario = horario;
         this.estado = estado;
         this.costo = costo;
+        this.metrosCuadrados = metrosCuadrados;
     }
 
-    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario) {
+    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer metrosCuadrados) {
         this.client = client;
         this.tarifa = tarifa;
         this.fechaCita = fechaCita;
         this.horaCita = horaCita;
         this.horario = horario;
+        this.metrosCuadrados = metrosCuadrados;
     }
 
     public static Cita crear(SolicitarCita solicitarCita) {
         ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), "Cliente de la cita es requerido");
         ValidadorArgumento.validarObligatorio(solicitarCita.getTarifa(), "Tarifa de la cita es requerido");
-        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), "Fecha de la cita es requerido");
+        ValidadorArgumento.validarMenor(LocalDateTime.now(), solicitarCita.getFechaCita().atStartOfDay(), "Fecha de Cita no puede ser anterior a la fecha actual");
+        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), "Fecha de Cita es requerida");
         ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), "Hora de la cita es requerido");
         ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), "Horario de la cita es requerido");
+        ValidadorArgumento.validarObligatorio(solicitarCita.getMetrosCuadrados(), "Numero de metros cuadrados es requerido");
         return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),
                 solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),
-                solicitarCita.getHorario());
+                solicitarCita.getHorario(), solicitarCita.getMetrosCuadrados());
     }
 
-    public static Cita reconstruir(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado, Double costo) {
+    public static Cita reconstruir(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario,
+                                   Integer estado, Double costo, Integer metrosCuadrados) {
         ValidadorArgumento.validarObligatorio(id, "Id de la cita es requerido");
         ValidadorArgumento.validarObligatorio(client, "Cliente de la cita es requerido");
         ValidadorArgumento.validarObligatorio(tarifa, "Tarifa de la cita es requerido");
-        ValidadorArgumento.validarObligatorio(fechaCita, "Fecha de la cita es requerido");
+        ValidadorArgumento.validarObligatorio(fechaCita, "Fecha de Cita es requerida");
+        ValidadorArgumento.validarMenor(LocalDateTime.now(), fechaCita.atStartOfDay(), "Fecha de Cita no puede ser anterior a la fecha actual");
         ValidadorArgumento.validarObligatorio(horaCita, "Hora de la cita es requerido");
         ValidadorArgumento.validarObligatorio(horario, "Horario de la cita es requerido");
         ValidadorArgumento.validarObligatorio(estado, "Estado de la cita es requerido");
         ValidadorArgumento.validarObligatorio(costo, "Costo de la cita es requerido");
-        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo);
+        ValidadorArgumento.validarObligatorio(metrosCuadrados, "Numero de metros cuadrados es requerido");
+        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo, metrosCuadrados);
     }
 
     public void cancelar() {
@@ -137,5 +149,13 @@ public class Cita {
 
     public void setCosto(Double costo) {
         this.costo = costo;
+    }
+
+    public Integer getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
+
+    public void setMetrosCuadrados(Integer metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
     }
 }

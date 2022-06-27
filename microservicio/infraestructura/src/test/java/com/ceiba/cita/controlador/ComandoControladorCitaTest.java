@@ -1,9 +1,7 @@
 package com.ceiba.cita.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.cita.puerto.RepositorioCita;
-import com.ceiba.factura.controlador.ComandoFacturarTestDataBuilder;
-import com.ceiba.factura.controlador.RespuestaFacturar;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -50,7 +48,7 @@ public class ComandoControladorCitaTest {
 
         var citaGuardada = repositorioCita.obtenerPorId(respuesta.getValor());
 
-        Assertions.assertEquals(LocalDate.parse("2022-06-14"), citaGuardada.getFechaCita());
+        Assertions.assertEquals(LocalDate.parse("2023-06-14"), citaGuardada.getFechaCita());
     }
 
 

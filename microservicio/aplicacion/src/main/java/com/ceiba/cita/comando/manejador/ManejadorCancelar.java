@@ -1,9 +1,8 @@
 package com.ceiba.cita.comando.manejador;
 
 import com.ceiba.cita.ComandoCancelar;
-import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCancelar;
-import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.manejador.ManejadorComando;
 import org.springframework.stereotype.Component;
 

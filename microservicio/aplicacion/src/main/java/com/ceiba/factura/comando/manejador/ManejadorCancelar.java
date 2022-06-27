@@ -1,6 +1,6 @@
 /*package com.ceiba.factura.comando.manejador;
 
-import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCancelar;
 import com.ceiba.factura.comando.ComandoCancelar;
 import com.ceiba.manejador.ManejadorComando;

@@ -1,6 +1,7 @@
 package com.ceiba.cita.controlador;
 
 import com.ceiba.cita.consulta.ManejadorConsultaCitasPorId;
+import com.ceiba.cita.modelo.dto.CitaResumenDto;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.consulta.ManejadorConsultarCitas;
 import com.ceiba.tarifa.entidad.Tarifa;
@@ -26,9 +27,9 @@ public class ConsultaControladorCita {
         this.manejadorConsultaCitasPorId = manejadorConsultaCitasPorId;
     }
 
-    @GetMapping("todas")
-    @Operation(summary = "Obtener", description = "Obtener todas las citas ")
-    public List<Cita> obtenerTodas() {
+    @GetMapping("activa")
+    @Operation(summary = "Obtener", description = "Metodo utilizado para obtener todas las citas que se encuentren activas ")
+    public List<CitaResumenDto> obtenerTodas() {
         return manejadorConsultarCitas.ejecutar();
     }
 

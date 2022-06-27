@@ -14,13 +14,16 @@ public class FabricaCitar {
 
     private final RepositorioTarifa repositorioTarifa;
 
-    public FabricaCitar(RepositorioClient reopositorioClient, RepositorioTarifa repositorioTarifa) {
-        this.repositorioClient = reopositorioClient;
+    public FabricaCitar(RepositorioClient repositorioClient, RepositorioTarifa repositorioTarifa) {
+        this.repositorioClient = repositorioClient;
         this.repositorioTarifa = repositorioTarifa;
     }
 
     public SolicitarCita crear(ComandoSolicitarCita comandoSolicitarCita) {
-        return new SolicitarCita(repositorioClient.obtenerPorId(comandoSolicitarCita.getIdCliente()), repositorioTarifa.obtenerPorId(comandoSolicitarCita.getIdTarifa())
-                , comandoSolicitarCita.getFechaCita(), comandoSolicitarCita.getHoraCita(), comandoSolicitarCita.getHorario());
+        return new SolicitarCita(
+                repositorioClient.obtenerPorId(comandoSolicitarCita.getIdCliente()),
+                repositorioTarifa.obtenerPorId(comandoSolicitarCita.getIdTarifa())
+                , comandoSolicitarCita.getFechaCita(), comandoSolicitarCita.getHoraCita(), comandoSolicitarCita.getHorario()
+                , comandoSolicitarCita.getMetrosCuadrados());
     }
 }

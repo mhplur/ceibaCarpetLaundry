@@ -3,6 +3,7 @@ package com.ceiba.cita;
 import com.ceiba.BasePrueba;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.client.entidad.Client;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.tarifa.entidad.Tarifa;
 import org.junit.jupiter.api.Assertions;
@@ -25,7 +26,8 @@ public class CitaTest {
                 .conHoraCita(LocalTime.parse("08:00:00"))
                 .conHorario("DIA")
                 .conEstado(1)
-                .conCosto(15.0).reconstruir();
+                .conCosto(15.0)
+                .conMetrosCuadrados(1).reconstruir();
 
         Assertions.assertEquals(1l, cita.getId());
         deberiaCrearTarifaExitosa(tarifa, cita);
@@ -35,6 +37,7 @@ public class CitaTest {
         Assertions.assertEquals("DIA", cita.getHorario());
         Assertions.assertEquals(1, cita.getEstado());
         Assertions.assertEquals(15.0, cita.getCosto());
+        Assertions.assertEquals(1, cita.getMetrosCuadrados());
 
     }
 
@@ -97,6 +100,21 @@ public class CitaTest {
     }
 
     @Test
+    void reconstruirCitaConFechaCitaMenorDiaActualDeberiaLanzarError() {
+        BasePrueba.assertThrows(() -> new CitaTestDataBuilder()
+                        .conId(1l)
+                        .conClient(new Client(1l, "001", "MILTON PAREDES", "QUITO"))
+                        .conTarifa(new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1))
+                        .conFechaCita(LocalDate.parse("2022-06-24"))
+                        .conHoraCita(LocalTime.parse("08:00:00"))
+                        .conEstado(1)
+                        .conCosto(15.0)
+                        .reconstruir(),
+                ExcepcionValorInvalido.class,
+                "Fecha de Cita no puede ser anterior a la fecha actual");
+    }
+
+    @Test
     void reconstruirCitaSinFechaCitaDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new CitaTestDataBuilder()
                         .conId(1l)
@@ -107,7 +125,7 @@ public class CitaTest {
                         .conCosto(15.0)
                         .reconstruir(),
                 ExcepcionValorObligatorio.class,
-                "Fecha de la cita es requerido");
+                "Fecha de Cita es requerida");
     }
 
     @Test
@@ -170,5 +188,19 @@ public class CitaTest {
                 "Costo de la cita es requerido");
     }
 
-
+    @Test
+    void reconstruirCitaSinMetrosCuadradosDeberiaLanzarError() {
+        BasePrueba.assertThrows(() -> new CitaTestDataBuilder()
+                        .conId(1l)
+                        .conClient(new Client(1l, "001", "MILTON PAREDES", "QUITO"))
+                        .conTarifa(new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1))
+                        .conFechaCita(LocalDate.parse("2022-09-17"))
+                        .conHoraCita(LocalTime.parse("08:00:00"))
+                        .conHorario("DIA")
+                        .conEstado(1)
+                        .conCosto(15.0)
+                        .reconstruir(),
+                ExcepcionValorObligatorio.class,
+                "Numero de metros cuadrados es requerido");
+    }
 }

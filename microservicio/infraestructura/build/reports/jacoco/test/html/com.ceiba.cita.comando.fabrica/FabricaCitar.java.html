@@ -14,14 +14,17 @@ public class FabricaCitar {
 
     private final RepositorioTarifa repositorioTarifa;
 
-<span class="fc" id="L17">    public FabricaCitar(RepositorioClient reopositorioClient, RepositorioTarifa repositorioTarifa) {</span>
-<span class="fc" id="L18">        this.repositorioClient = reopositorioClient;</span>
+<span class="fc" id="L17">    public FabricaCitar(RepositorioClient repositorioClient, RepositorioTarifa repositorioTarifa) {</span>
+<span class="fc" id="L18">        this.repositorioClient = repositorioClient;</span>
 <span class="fc" id="L19">        this.repositorioTarifa = repositorioTarifa;</span>
 <span class="fc" id="L20">    }</span>
 
     public SolicitarCita crear(ComandoSolicitarCita comandoSolicitarCita) {
-<span class="fc" id="L23">        return new SolicitarCita(repositorioClient.obtenerPorId(comandoSolicitarCita.getIdCliente()), repositorioTarifa.obtenerPorId(comandoSolicitarCita.getIdTarifa())</span>
-<span class="fc" id="L24">                , comandoSolicitarCita.getFechaCita(), comandoSolicitarCita.getHoraCita(), comandoSolicitarCita.getHorario());</span>
+<span class="fc" id="L23">        return new SolicitarCita(</span>
+<span class="fc" id="L24">                repositorioClient.obtenerPorId(comandoSolicitarCita.getIdCliente()),</span>
+<span class="fc" id="L25">                repositorioTarifa.obtenerPorId(comandoSolicitarCita.getIdTarifa())</span>
+<span class="fc" id="L26">                , comandoSolicitarCita.getFechaCita(), comandoSolicitarCita.getHoraCita(), comandoSolicitarCita.getHorario()</span>
+<span class="fc" id="L27">                , comandoSolicitarCita.getMetrosCuadrados());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

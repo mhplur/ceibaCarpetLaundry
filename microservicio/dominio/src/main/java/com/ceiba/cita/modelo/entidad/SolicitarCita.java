@@ -17,4 +17,5 @@ public class SolicitarCita {
     private LocalDate fechaCita;
     private LocalTime horaCita;
     private String horario;
+    private Integer metrosCuadrados;
 }

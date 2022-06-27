@@ -1,7 +1,7 @@
 package com.ceiba.cita;
 
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cita.puerto.RepositorioCita;
+import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCancelar;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

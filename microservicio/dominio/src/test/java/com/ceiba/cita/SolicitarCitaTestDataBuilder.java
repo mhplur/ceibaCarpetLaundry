@@ -13,8 +13,8 @@ public class SolicitarCitaTestDataBuilder {
     private Tarifa tarifa;
     private LocalDate fechaCita;
     private LocalTime horaCita;
-
     private String horario;
+    private Integer metrosCuadrados;
 
 
     public SolicitarCitaTestDataBuilder conClient(Client client) {
@@ -42,8 +42,14 @@ public class SolicitarCitaTestDataBuilder {
         return this;
     }
 
+    public SolicitarCitaTestDataBuilder conMetrosCuadrado(Integer metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+        return this;
+    }
+
+
     public SolicitarCita build() {
-        return new SolicitarCita(cliente, tarifa, fechaCita, horaCita, horario);
+        return new SolicitarCita(cliente, tarifa, fechaCita, horaCita, horario, metrosCuadrados);
     }
 
 }
