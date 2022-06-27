@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.factura.FacturaTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-06-27T21:02:39" hostname="DESKTOP-SJD26V0" time="0.06">
+<testsuite name="com.ceiba.factura.FacturaTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-06-27T22:46:52" hostname="DESKTOP-SJD26V0" time="0.051">
   <properties/>
-  <testcase name="reconstruirValorTotalMenorACeroLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.008"/>
-  <testcase name="facturaSinProductosdeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.008"/>
+  <testcase name="reconstruirValorTotalMenorACeroLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.012"/>
+  <testcase name="facturaSinProductosdeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.003"/>
   <testcase name="deberiaReconstruirLaFacturaCorrectamente()" classname="com.ceiba.factura.FacturaTest" time="0.002"/>
-  <testcase name="facturaSinClientedeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.004"/>
-  <testcase name="reconstruirFacturaSinClientedeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
+  <testcase name="facturaSinClientedeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
+  <testcase name="reconstruirFacturaSinClientedeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.002"/>
   <testcase name="deberiaCrearLaFacturaCorrectamenteClientePreferenccial()" classname="com.ceiba.factura.FacturaTest" time="0.009"/>
   <testcase name="anularFacturaDeberiaQuedarEnEstadoAnulada()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
   <testcase name="anularFacturaDeClienteComunDeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.003"/>
-  <testcase name="reconstruirSinProductosdeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.003"/>
+  <testcase name="reconstruirSinProductosdeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.004"/>
   <testcase name="reconstruirSinIdDeberiaLanzarError()" classname="com.ceiba.factura.FacturaTest" time="0.002"/>
   <testcase name="deberiaCrearLaFacturaCorrectamenteClienteEspecial()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

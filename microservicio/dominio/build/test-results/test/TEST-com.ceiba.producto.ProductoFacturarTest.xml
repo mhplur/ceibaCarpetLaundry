@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.producto.ProductoFacturarTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-06-27T21:02:39" hostname="DESKTOP-SJD26V0" time="0.022">
+<testsuite name="com.ceiba.producto.ProductoFacturarTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-06-27T22:46:52" hostname="DESKTOP-SJD26V0" time="0.025">
   <properties/>
   <testcase name="calcularValorTotalExitosoSinIva()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.001"/>
-  <testcase name="deberiaReconstruirExitoso()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.001"/>
-  <testcase name="crearSinProductodeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.004"/>
-  <testcase name="deberiaCrearExitoso()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.001"/>
-  <testcase name="crearSinCantidaddeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.003"/>
-  <testcase name="reconstruirSinProductodeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.003"/>
+  <testcase name="deberiaReconstruirExitoso()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.0"/>
+  <testcase name="crearSinProductodeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.003"/>
+  <testcase name="deberiaCrearExitoso()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.003"/>
+  <testcase name="crearSinCantidaddeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.002"/>
+  <testcase name="reconstruirSinProductodeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.002"/>
   <testcase name="reconstruirSinCantidaddeberiaFallar()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.002"/>
-  <testcase name="calcularValorTotalExitosoConIva()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.001"/>
+  <testcase name="calcularValorTotalExitosoConIva()" classname="com.ceiba.producto.ProductoFacturarTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

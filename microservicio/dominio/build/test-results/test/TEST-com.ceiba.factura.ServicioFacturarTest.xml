@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.factura.ServicioFacturarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-27T21:02:39" hostname="DESKTOP-SJD26V0" time="0.012">
+<testsuite name="com.ceiba.factura.ServicioFacturarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-27T22:46:52" hostname="DESKTOP-SJD26V0" time="0.013">
   <properties/>
-  <testcase name="deberiaGenerarFacturaYGuardar()" classname="com.ceiba.factura.ServicioFacturarTest" time="0.012"/>
+  <testcase name="deberiaGenerarFacturaYGuardar()" classname="com.ceiba.factura.ServicioFacturarTest" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
