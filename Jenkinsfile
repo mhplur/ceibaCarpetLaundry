@@ -55,8 +55,8 @@ pipeline {
       steps{
         echo '------------>Análisis de código estático<------------'
         sonarqubeMasQualityGatesP(
-        sonarKey:'co.com.ceiba.adn:lavadoralfombraBack-milton.paredes',
-        sonarName:'CeibaADN-lavadoralfombraBack(milton.paredes)',
+        sonarKey:'co.com.ceiba.adn:lavadoralfombra-milton.paredes',
+        sonarName:'CeibaADN-lavadoralfombra(milton.paredes)',
         sonarPathProperties:'./sonar-project.properties')
       }
     }
