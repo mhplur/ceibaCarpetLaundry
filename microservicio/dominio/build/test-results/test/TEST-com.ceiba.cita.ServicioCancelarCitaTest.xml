@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cita.ServicioCancelarCitaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T00:17:01" hostname="DESKTOP-SJD26V0" time="4.41">
+<testsuite name="com.ceiba.cita.ServicioCancelarCitaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T00:20:44" hostname="DESKTOP-SJD26V0" time="5.185">
   <properties/>
-  <testcase name="deberiaCancelarExitosamente()" classname="com.ceiba.cita.ServicioCancelarCitaTest" time="4.41"/>
+  <testcase name="deberiaCancelarExitosamente()" classname="com.ceiba.cita.ServicioCancelarCitaTest" time="5.185"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

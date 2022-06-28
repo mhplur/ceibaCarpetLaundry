@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cita.UtilTimeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T00:17:05" hostname="DESKTOP-SJD26V0" time="0.007">
+<testsuite name="com.ceiba.cita.UtilTimeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T00:20:49" hostname="DESKTOP-SJD26V0" time="0.007">
   <properties/>
   <testcase name="deberiaSerVerdadero()" classname="com.ceiba.cita.UtilTimeTest" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
