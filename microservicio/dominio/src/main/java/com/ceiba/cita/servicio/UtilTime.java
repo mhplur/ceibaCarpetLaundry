@@ -12,8 +12,12 @@ public class UtilTime {
     private static LocalTime CONS_END_NIGHT = LocalTime.parse("04:00:00");
 
     public static boolean checkAllRangeTime(LocalTime dateTime) {
-        return checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY) ||
-                checkRangeNightTime(dateTime, CONS_START_NIGHT, CONS_END_NIGHT) ?
+        if (dateTime == null) {
+            throw new IllegalArgumentException("Tiempo no puede ser nulo");
+        }
+        boolean isInsideRangeDayTime = checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY);
+        boolean isInsideRangeNightTime = checkRangeNightTime(dateTime, CONS_START_NIGHT, CONS_END_NIGHT);
+        return isInsideRangeDayTime || isInsideRangeNightTime ?
                 true : false;
     }
 
@@ -31,7 +35,9 @@ public class UtilTime {
         int startValue = dateTime.compareTo(startRange);
         int endValue = dateTime.compareTo(endRange);
 
-        return (startValue > 0 || startValue == 0) && (endValue < 0 || endValue == 0) ?
-                true : false;
+        boolean isInsideRangeStart = startValue > 0 || startValue == 0;
+        boolean isInsideRangeEnd = endValue < 0 || endValue == 0;
+
+        return isInsideRangeStart && isInsideRangeEnd ? true : false;
     }
 }

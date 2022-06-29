@@ -31,7 +31,7 @@ public class ConsultaControladorClient {
 <span class="fc" id="L31">        this.manejadorConsultaClientesPorId = manejadorConsultaClientesPorId;</span>
 <span class="fc" id="L32">    }</span>
 
-    @GetMapping(&quot;todos&quot;)
+    @GetMapping()
     @Operation(summary = &quot;Todos&quot;, description = &quot;Metodo utilizado para consultar todos los clientes&quot;)
     public List&lt;Client&gt; obtenerTodos() {
 <span class="fc" id="L37">        return manejadorConsultaClientes.ejecutar();</span>

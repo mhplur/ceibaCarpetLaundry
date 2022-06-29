@@ -27,7 +27,7 @@ public class ConsultaControladorClientTest {
 
     @Test
     void consultarTodosLosClientes() throws Exception {
-        mockMvc.perform(get("/cliente/todos")
+        mockMvc.perform(get("/cliente")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("$[0].id", is(1)))

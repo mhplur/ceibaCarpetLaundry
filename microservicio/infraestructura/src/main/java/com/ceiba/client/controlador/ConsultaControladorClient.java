@@ -31,7 +31,7 @@ public class ConsultaControladorClient {
         this.manejadorConsultaClientesPorId = manejadorConsultaClientesPorId;
     }
 
-    @GetMapping("todos")
+    @GetMapping()
     @Operation(summary = "Todos", description = "Metodo utilizado para consultar todos los clientes")
     public List<Client> obtenerTodos() {
         return manejadorConsultaClientes.ejecutar();
