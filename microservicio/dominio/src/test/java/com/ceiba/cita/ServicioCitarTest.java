@@ -49,6 +49,38 @@ public class ServicioCitarTest {
     }
 
     @Test
+    void deberiaCitarYAlmacenarunaCitaNoche() {
+        Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
+        Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
+        var solicitarCita = new SolicitarCitaTestDataBuilder()
+                .conClient(client)
+                .conTarifa(tarifa)
+                .conFechaCita(LocalDate.parse("2022-09-17"))
+                .conHoraCita(LocalTime.parse("23:00:00"))
+                .conHorario("NOCHE")
+                .conMetrosCuadrado(2)
+                .build();
+
+        var repositorioCita = Mockito.mock(RepositorioCita.class);
+        Mockito.when(repositorioCita.guardar(Mockito.any())).thenReturn(1l);
+
+        var servicioCitar = new ServicioCitar(repositorioCita);
+        var idCitaCreada = servicioCitar.ejecutar(solicitarCita);
+
+        ArgumentCaptor<Cita> captorCita = ArgumentCaptor.forClass(Cita.class);
+        Mockito.verify(repositorioCita, Mockito.times(1)).guardar(captorCita.capture());
+        Assertions.assertEquals(client, captorCita.getValue().getClient());
+        Assertions.assertEquals(tarifa, captorCita.getValue().getTarifa());
+        Assertions.assertEquals(40, captorCita.getValue().getCosto());
+        Assertions.assertEquals(LocalDate.parse("2022-09-17"), captorCita.getValue().getFechaCita());
+        Assertions.assertEquals(LocalTime.parse("23:00:00"), captorCita.getValue().getHoraCita());
+        Assertions.assertEquals("NOCHE", captorCita.getValue().getHorario());
+        Assertions.assertEquals(2, captorCita.getValue().getMetrosCuadrados());
+        Assertions.assertEquals(1, captorCita.getValue().getEstado());
+        Assertions.assertEquals(1L, idCitaCreada);
+    }
+
+    @Test
     void deberiaLanzarExcepcionPorParametroNulo() {
         Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
         Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
@@ -58,6 +90,23 @@ public class ServicioCitarTest {
                 .conFechaCita(LocalDate.parse("2022-09-17"))
                 .conHoraCita(LocalTime.parse("05:00:00"))
                 .conHorario("DIA")
+                .conMetrosCuadrado(2)
+                .build();
+        var repositorioCita = Mockito.mock(RepositorioCita.class);
+        var servicioCitar = new ServicioCitar(repositorioCita);
+        Assertions.assertThrows(ExcepcionValorInvalido.class, () -> servicioCitar.ejecutar(solicitarCita));
+    }
+
+    @Test
+    void deberiaLanzarExcepcionPorParametroHorarioInvalido() {
+        Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
+        Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
+        var solicitarCita = new SolicitarCitaTestDataBuilder()
+                .conClient(client)
+                .conTarifa(tarifa)
+                .conFechaCita(LocalDate.parse("2022-09-17"))
+                .conHoraCita(LocalTime.parse("05:00:00"))
+                .conHorario("DIAddd")
                 .conMetrosCuadrado(2)
                 .build();
         var repositorioCita = Mockito.mock(RepositorioCita.class);
