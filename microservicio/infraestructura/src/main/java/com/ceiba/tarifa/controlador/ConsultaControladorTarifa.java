@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/tarifa")
 @Tag(name = "Controlador consulta tarifa")
-public class ConsultaControladorTarifa {
+public final class ConsultaControladorTarifa {
 
     private final ManejadorConsultaTarifaPorCodigo manejadorConsultaTarifaPorCodigo;
 

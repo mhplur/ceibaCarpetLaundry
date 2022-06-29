@@ -4,6 +4,7 @@ import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.modelo.entidad.HorarioPrecio;
 import com.ceiba.cita.modelo.entidad.SolicitarCita;
 import com.ceiba.cita.puerto.repositorio.RepositorioCita;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
 import java.util.List;
 
@@ -14,19 +15,18 @@ public class ServicioCitar {
 
     private final RepositorioCita repositorioCita;
 
-<span class="fc" id="L17">    public ServicioCitar(RepositorioCita repositorioCita) {</span>
-<span class="fc" id="L18">        this.repositorioCita = repositorioCita;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L18">    public ServicioCitar(RepositorioCita repositorioCita) {</span>
+<span class="fc" id="L19">        this.repositorioCita = repositorioCita;</span>
+<span class="fc" id="L20">    }</span>
 
     public Long ejecutar(SolicitarCita solicitarCita) {
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if (UtilTime.checkAllRangeTime(solicitarCita.getHoraCita())) {</span>
-<span class="fc" id="L23">            var cita = Cita.crear(solicitarCita);</span>
-<span class="fc" id="L24">            cita.setEstado(1);</span>
-<span class="fc" id="L25">            cita.setCosto(getCost(solicitarCita));</span>
-<span class="fc" id="L26">            return repositorioCita.guardar(cita);</span>
-        }
-        //TODO ADD EXCEPTION
-<span class="nc" id="L29">        return 0l;</span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if (UtilTime.checkAllRangeTime(solicitarCita.getHoraCita())) {</span>
+<span class="fc" id="L24">            var cita = Cita.crear(solicitarCita);</span>
+<span class="fc" id="L25">            cita.setEstado(1);</span>
+<span class="fc" id="L26">            cita.setCosto(getCost(solicitarCita));</span>
+<span class="fc" id="L27">            return repositorioCita.guardar(cita);</span>
+        } else
+<span class="nc" id="L29">            throw new ExcepcionValorInvalido(&quot;No se guardo la Cita&quot;);</span>
     }
 
     private Double getCost(SolicitarCita solicitarCita) {
@@ -57,8 +57,8 @@ public class ServicioCitar {
 <span class="nc" id="L57">            return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.DIA_DESCUENTO.getPorcentaje());</span>
 <span class="nc bnc" id="L58" title="All 2 branches missed.">        } else if (horario.equals(CONS_HORARIO_NOCHE)) {</span>
 <span class="nc" id="L59">            return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.NOCHE_DESCUENTO.getPorcentaje()) + HorarioPrecio.NOCHE_DESCUENTO.getCostoAdicional();</span>
-        }
-<span class="nc" id="L61">        return 0.0;</span>
+        } else
+<span class="nc" id="L61">            throw new ExcepcionValorInvalido(&quot;No se encuentra el horario especificado&quot; + horario);</span>
     }
 
     private Double getCostNormal(Integer squareMeterRate, String horario) {
@@ -66,8 +66,8 @@ public class ServicioCitar {
 <span class="fc" id="L66">            return Double.valueOf(squareMeterRate);</span>
 <span class="nc bnc" id="L67" title="All 2 branches missed.">        } else if (horario.equals(CONS_HORARIO_NOCHE)) {</span>
 <span class="nc" id="L68">            return Double.valueOf(squareMeterRate + Double.valueOf(HorarioPrecio.NOCHE.getCostoAdicional()));</span>
-        }
-<span class="nc" id="L70">        return 0.0;</span>
+        } else
+<span class="nc" id="L70">            throw new ExcepcionValorInvalido(&quot;No se encuentra el horario especificado: &quot; + horario);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

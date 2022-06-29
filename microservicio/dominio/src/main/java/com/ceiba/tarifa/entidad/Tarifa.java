@@ -1,7 +1,6 @@
 package com.ceiba.tarifa.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import lombok.AllArgsConstructor;
 
 public class Tarifa {
     private Long id;

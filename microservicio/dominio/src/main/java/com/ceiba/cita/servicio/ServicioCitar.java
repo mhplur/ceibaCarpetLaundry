@@ -4,6 +4,7 @@ import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.modelo.entidad.HorarioPrecio;
 import com.ceiba.cita.modelo.entidad.SolicitarCita;
 import com.ceiba.cita.puerto.repositorio.RepositorioCita;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
 import java.util.List;
 
@@ -24,9 +25,8 @@ public class ServicioCitar {
             cita.setEstado(1);
             cita.setCosto(getCost(solicitarCita));
             return repositorioCita.guardar(cita);
-        }
-        //TODO ADD EXCEPTION
-        return 0l;
+        } else
+            throw new ExcepcionValorInvalido("No se guardo la Cita");
     }
 
     private Double getCost(SolicitarCita solicitarCita) {
@@ -57,8 +57,8 @@ public class ServicioCitar {
             return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.DIA_DESCUENTO.getPorcentaje());
         } else if (horario.equals(CONS_HORARIO_NOCHE)) {
             return costoPorMetroCuadrado - (costoPorMetroCuadrado * HorarioPrecio.NOCHE_DESCUENTO.getPorcentaje()) + HorarioPrecio.NOCHE_DESCUENTO.getCostoAdicional();
-        }
-        return 0.0;
+        } else
+            throw new ExcepcionValorInvalido("No se encuentra el horario especificado" + horario);
     }
 
     private Double getCostNormal(Integer squareMeterRate, String horario) {
@@ -66,7 +66,7 @@ public class ServicioCitar {
             return Double.valueOf(squareMeterRate);
         } else if (horario.equals(CONS_HORARIO_NOCHE)) {
             return Double.valueOf(squareMeterRate + Double.valueOf(HorarioPrecio.NOCHE.getCostoAdicional()));
-        }
-        return 0.0;
+        } else
+            throw new ExcepcionValorInvalido("No se encuentra el horario especificado: " + horario);
     }
 }

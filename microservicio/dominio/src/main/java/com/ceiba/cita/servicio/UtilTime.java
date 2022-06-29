@@ -6,10 +6,10 @@ public class UtilTime {
 
     private static final LocalTime CONS_MIDNIGHT = LocalTime.parse("23:59:59");
     private static final LocalTime CONS_DAY = LocalTime.parse("00:00:00");
-    private static LocalTime CONS_START_DAY = LocalTime.parse("06:00:00");
-    private static LocalTime CONS_END_DAY = LocalTime.parse("18:00:00");
-    private static LocalTime CONS_START_NIGHT = LocalTime.parse("20:00:00");
-    private static LocalTime CONS_END_NIGHT = LocalTime.parse("04:00:00");
+    private static  final LocalTime CONS_START_DAY = LocalTime.parse("06:00:00");
+    private static final  LocalTime CONS_END_DAY = LocalTime.parse("18:00:00");
+    private static final LocalTime CONS_START_NIGHT = LocalTime.parse("20:00:00");
+    private static final LocalTime CONS_END_NIGHT = LocalTime.parse("04:00:00");
 
     public static boolean checkAllRangeTime(LocalTime dateTime) {
         if (dateTime == null) {
@@ -17,8 +17,7 @@ public class UtilTime {
         }
         boolean isInsideRangeDayTime = checkRangeDayTime(dateTime, CONS_START_DAY, CONS_END_DAY);
         boolean isInsideRangeNightTime = checkRangeNightTime(dateTime, CONS_START_NIGHT, CONS_END_NIGHT);
-        return isInsideRangeDayTime || isInsideRangeNightTime ?
-                true : false;
+        return isInsideRangeDayTime || isInsideRangeNightTime;
     }
 
     private static boolean checkRangeDayTime(LocalTime dateTime, LocalTime startRange, LocalTime endRange) {
@@ -38,6 +37,6 @@ public class UtilTime {
         boolean isInsideRangeStart = startValue > 0 || startValue == 0;
         boolean isInsideRangeEnd = endValue < 0 || endValue == 0;
 
-        return isInsideRangeStart && isInsideRangeEnd ? true : false;
+        return isInsideRangeStart && isInsideRangeEnd;
     }
 }

@@ -6,7 +6,6 @@ import com.ceiba.client.consulta.ManejadorConsultaClientesPorIdentificacionPerso
 import com.ceiba.client.entidad.Client;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/cliente")
 @Tag(name = "Controlador consulta client")
-public class ConsultaControladorClient {
+public final class ConsultaControladorClient {
 
     private final ManejadorConsultaClientes manejadorConsultaClientes;
 
