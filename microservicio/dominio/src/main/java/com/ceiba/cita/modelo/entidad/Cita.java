@@ -8,7 +8,6 @@ import com.ceiba.tarifa.entidad.Tarifa;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
 
 public class Cita {
 
@@ -29,10 +28,6 @@ public class Cita {
     private Double costo;
 
     private Integer metrosCuadrados;
-
-    public Cita() {
-        super();
-    }
 
     public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado,
                 Double costo, Integer metrosCuadrados) {
@@ -103,24 +98,12 @@ public class Cita {
         return tarifa;
     }
 
-    public void setTarifa(Tarifa tarifa) {
-        this.tarifa = tarifa;
-    }
-
     public LocalDate getFechaCita() {
         return fechaCita;
     }
 
-    public void setFechaCita(LocalDate fechaCita) {
-        this.fechaCita = fechaCita;
-    }
-
     public LocalTime getHoraCita() {
         return horaCita;
-    }
-
-    public void setHoraCita(LocalTime horaCita) {
-        this.horaCita = horaCita;
     }
 
     public String getHorario() {
@@ -151,7 +134,4 @@ public class Cita {
         return metrosCuadrados;
     }
 
-    public void setMetrosCuadrados(Integer metrosCuadrados) {
-        this.metrosCuadrados = metrosCuadrados;
-    }
 }

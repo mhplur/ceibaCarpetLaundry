@@ -8,14 +8,14 @@ public class ServicioCancelar {
 
     private final RepositorioCita repositorioCita;
 
-<span class="nc" id="L11">    public ServicioCancelar(RepositorioCita repositorioCita) {</span>
-<span class="nc" id="L12">        this.repositorioCita = repositorioCita;</span>
-<span class="nc" id="L13">    }</span>
+<span class="fc" id="L11">    public ServicioCancelar(RepositorioCita repositorioCita) {</span>
+<span class="fc" id="L12">        this.repositorioCita = repositorioCita;</span>
+<span class="fc" id="L13">    }</span>
 
     public void ejecutar(Cita cita) {
-<span class="nc" id="L16">        ValidadorArgumento.validarObligatorio(cita, &quot;No es posible cancelar la cita&quot;);</span>
-<span class="nc" id="L17">        cita.cancelar();</span>
-<span class="nc" id="L18">        repositorioCita.actualizarEstado(cita);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L16">        ValidadorArgumento.validarObligatorio(cita, &quot;No es posible cancelar la cita&quot;);</span>
+<span class="fc" id="L17">        cita.cancelar();</span>
+<span class="fc" id="L18">        repositorioCita.actualizarEstado(cita);</span>
+<span class="fc" id="L19">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
