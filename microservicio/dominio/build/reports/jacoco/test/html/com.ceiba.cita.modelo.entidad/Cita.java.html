@@ -35,72 +35,72 @@ public class Cita {
 <span class="nc" id="L35">    }</span>
 
     public Cita(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer estado,
-<span class="fc" id="L38">                Double costo, Integer metrosCuadrados) {</span>
-<span class="fc" id="L39">        this.id = id;</span>
-<span class="fc" id="L40">        this.client = client;</span>
-<span class="fc" id="L41">        this.tarifa = tarifa;</span>
-<span class="fc" id="L42">        this.fechaCita = fechaCita;</span>
-<span class="fc" id="L43">        this.horaCita = horaCita;</span>
-<span class="fc" id="L44">        this.horario = horario;</span>
-<span class="fc" id="L45">        this.estado = estado;</span>
-<span class="fc" id="L46">        this.costo = costo;</span>
-<span class="fc" id="L47">        this.metrosCuadrados = metrosCuadrados;</span>
-<span class="fc" id="L48">    }</span>
+<span class="nc" id="L38">                Double costo, Integer metrosCuadrados) {</span>
+<span class="nc" id="L39">        this.id = id;</span>
+<span class="nc" id="L40">        this.client = client;</span>
+<span class="nc" id="L41">        this.tarifa = tarifa;</span>
+<span class="nc" id="L42">        this.fechaCita = fechaCita;</span>
+<span class="nc" id="L43">        this.horaCita = horaCita;</span>
+<span class="nc" id="L44">        this.horario = horario;</span>
+<span class="nc" id="L45">        this.estado = estado;</span>
+<span class="nc" id="L46">        this.costo = costo;</span>
+<span class="nc" id="L47">        this.metrosCuadrados = metrosCuadrados;</span>
+<span class="nc" id="L48">    }</span>
 
-<span class="fc" id="L50">    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer metrosCuadrados) {</span>
-<span class="fc" id="L51">        this.client = client;</span>
-<span class="fc" id="L52">        this.tarifa = tarifa;</span>
-<span class="fc" id="L53">        this.fechaCita = fechaCita;</span>
-<span class="fc" id="L54">        this.horaCita = horaCita;</span>
-<span class="fc" id="L55">        this.horario = horario;</span>
-<span class="fc" id="L56">        this.metrosCuadrados = metrosCuadrados;</span>
-<span class="fc" id="L57">    }</span>
+<span class="nc" id="L50">    public Cita(Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario, Integer metrosCuadrados) {</span>
+<span class="nc" id="L51">        this.client = client;</span>
+<span class="nc" id="L52">        this.tarifa = tarifa;</span>
+<span class="nc" id="L53">        this.fechaCita = fechaCita;</span>
+<span class="nc" id="L54">        this.horaCita = horaCita;</span>
+<span class="nc" id="L55">        this.horario = horario;</span>
+<span class="nc" id="L56">        this.metrosCuadrados = metrosCuadrados;</span>
+<span class="nc" id="L57">    }</span>
 
     public static Cita crear(SolicitarCita solicitarCita) {
-<span class="fc" id="L60">        ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), &quot;Cliente de la cita es requerido&quot;);</span>
-<span class="fc" id="L61">        ValidadorArgumento.validarObligatorio(solicitarCita.getTarifa(), &quot;Tarifa de la cita es requerido&quot;);</span>
-<span class="fc" id="L62">        ValidadorArgumento.validarMenor(LocalDateTime.now(), solicitarCita.getFechaCita().atStartOfDay(), &quot;Fecha de Cita no puede ser anterior a la fecha actual&quot;);</span>
-<span class="fc" id="L63">        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), &quot;Fecha de Cita es requerida&quot;);</span>
-<span class="fc" id="L64">        ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), &quot;Hora de la cita es requerido&quot;);</span>
-<span class="fc" id="L65">        ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), &quot;Horario de la cita es requerido&quot;);</span>
-<span class="fc" id="L66">        ValidadorArgumento.validarObligatorio(solicitarCita.getMetrosCuadrados(), &quot;Numero de metros cuadrados es requerido&quot;);</span>
-<span class="fc" id="L67">        return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),</span>
-<span class="fc" id="L68">                solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),</span>
-<span class="fc" id="L69">                solicitarCita.getHorario(), solicitarCita.getMetrosCuadrados());</span>
+<span class="nc" id="L60">        ValidadorArgumento.validarObligatorio(solicitarCita.getCliente(), &quot;Cliente de la cita es requerido&quot;);</span>
+<span class="nc" id="L61">        ValidadorArgumento.validarObligatorio(solicitarCita.getTarifa(), &quot;Tarifa de la cita es requerido&quot;);</span>
+<span class="nc" id="L62">        ValidadorArgumento.validarMenor(LocalDateTime.now(), solicitarCita.getFechaCita().atStartOfDay(), &quot;Fecha de Cita no puede ser anterior a la fecha actual&quot;);</span>
+<span class="nc" id="L63">        ValidadorArgumento.validarObligatorio(solicitarCita.getFechaCita(), &quot;Fecha de Cita es requerida&quot;);</span>
+<span class="nc" id="L64">        ValidadorArgumento.validarObligatorio(solicitarCita.getHoraCita(), &quot;Hora de la cita es requerido&quot;);</span>
+<span class="nc" id="L65">        ValidadorArgumento.validarObligatorio(solicitarCita.getHorario(), &quot;Horario de la cita es requerido&quot;);</span>
+<span class="nc" id="L66">        ValidadorArgumento.validarObligatorio(solicitarCita.getMetrosCuadrados(), &quot;Numero de metros cuadrados es requerido&quot;);</span>
+<span class="nc" id="L67">        return new Cita(solicitarCita.getCliente(), solicitarCita.getTarifa(),</span>
+<span class="nc" id="L68">                solicitarCita.getFechaCita(), solicitarCita.getHoraCita(),</span>
+<span class="nc" id="L69">                solicitarCita.getHorario(), solicitarCita.getMetrosCuadrados());</span>
     }
 
     public static Cita reconstruir(Long id, Client client, Tarifa tarifa, LocalDate fechaCita, LocalTime horaCita, String horario,
                                    Integer estado, Double costo, Integer metrosCuadrados) {
-<span class="fc" id="L74">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la cita es requerido&quot;);</span>
-<span class="fc" id="L75">        ValidadorArgumento.validarObligatorio(client, &quot;Cliente de la cita es requerido&quot;);</span>
-<span class="fc" id="L76">        ValidadorArgumento.validarObligatorio(tarifa, &quot;Tarifa de la cita es requerido&quot;);</span>
-<span class="fc" id="L77">        ValidadorArgumento.validarObligatorio(fechaCita, &quot;Fecha de Cita es requerida&quot;);</span>
-<span class="fc" id="L78">        ValidadorArgumento.validarMenor(LocalDateTime.now(), fechaCita.atStartOfDay(), &quot;Fecha de Cita no puede ser anterior a la fecha actual&quot;);</span>
-<span class="fc" id="L79">        ValidadorArgumento.validarObligatorio(horaCita, &quot;Hora de la cita es requerido&quot;);</span>
-<span class="fc" id="L80">        ValidadorArgumento.validarObligatorio(horario, &quot;Horario de la cita es requerido&quot;);</span>
-<span class="fc" id="L81">        ValidadorArgumento.validarObligatorio(estado, &quot;Estado de la cita es requerido&quot;);</span>
-<span class="fc" id="L82">        ValidadorArgumento.validarObligatorio(costo, &quot;Costo de la cita es requerido&quot;);</span>
-<span class="fc" id="L83">        ValidadorArgumento.validarObligatorio(metrosCuadrados, &quot;Numero de metros cuadrados es requerido&quot;);</span>
-<span class="fc" id="L84">        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo, metrosCuadrados);</span>
+<span class="nc" id="L74">        ValidadorArgumento.validarObligatorio(id, &quot;Id de la cita es requerido&quot;);</span>
+<span class="nc" id="L75">        ValidadorArgumento.validarObligatorio(client, &quot;Cliente de la cita es requerido&quot;);</span>
+<span class="nc" id="L76">        ValidadorArgumento.validarObligatorio(tarifa, &quot;Tarifa de la cita es requerido&quot;);</span>
+<span class="nc" id="L77">        ValidadorArgumento.validarObligatorio(fechaCita, &quot;Fecha de Cita es requerida&quot;);</span>
+<span class="nc" id="L78">        ValidadorArgumento.validarMenor(LocalDateTime.now(), fechaCita.atStartOfDay(), &quot;Fecha de Cita no puede ser anterior a la fecha actual&quot;);</span>
+<span class="nc" id="L79">        ValidadorArgumento.validarObligatorio(horaCita, &quot;Hora de la cita es requerido&quot;);</span>
+<span class="nc" id="L80">        ValidadorArgumento.validarObligatorio(horario, &quot;Horario de la cita es requerido&quot;);</span>
+<span class="nc" id="L81">        ValidadorArgumento.validarObligatorio(estado, &quot;Estado de la cita es requerido&quot;);</span>
+<span class="nc" id="L82">        ValidadorArgumento.validarObligatorio(costo, &quot;Costo de la cita es requerido&quot;);</span>
+<span class="nc" id="L83">        ValidadorArgumento.validarObligatorio(metrosCuadrados, &quot;Numero de metros cuadrados es requerido&quot;);</span>
+<span class="nc" id="L84">        return new Cita(id, client, tarifa, fechaCita, horaCita, horario, estado, costo, metrosCuadrados);</span>
     }
 
     public void cancelar() {
-<span class="pc bpc" id="L88" title="1 of 2 branches missed.">        if (this.estado == 0) {</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        if (this.estado == 0) {</span>
 <span class="nc" id="L89">            throw new ExcepcionValorInvalido(&quot;La cita ya se encuentra cancelada &quot;);</span>
         }
-<span class="fc" id="L91">        this.estado = 0;</span>
-<span class="fc" id="L92">    }</span>
+<span class="nc" id="L91">        this.estado = 0;</span>
+<span class="nc" id="L92">    }</span>
 
     public Long getId() {
-<span class="fc" id="L95">        return id;</span>
+<span class="nc" id="L95">        return id;</span>
     }
 
     public Client getClient() {
-<span class="fc" id="L99">        return client;</span>
+<span class="nc" id="L99">        return client;</span>
     }
 
     public Tarifa getTarifa() {
-<span class="fc" id="L103">        return tarifa;</span>
+<span class="nc" id="L103">        return tarifa;</span>
     }
 
     public void setTarifa(Tarifa tarifa) {
@@ -108,7 +108,7 @@ public class Cita {
 <span class="nc" id="L108">    }</span>
 
     public LocalDate getFechaCita() {
-<span class="fc" id="L111">        return fechaCita;</span>
+<span class="nc" id="L111">        return fechaCita;</span>
     }
 
     public void setFechaCita(LocalDate fechaCita) {
@@ -116,7 +116,7 @@ public class Cita {
 <span class="nc" id="L116">    }</span>
 
     public LocalTime getHoraCita() {
-<span class="fc" id="L119">        return horaCita;</span>
+<span class="nc" id="L119">        return horaCita;</span>
     }
 
     public void setHoraCita(LocalTime horaCita) {
@@ -124,7 +124,7 @@ public class Cita {
 <span class="nc" id="L124">    }</span>
 
     public String getHorario() {
-<span class="fc" id="L127">        return horario;</span>
+<span class="nc" id="L127">        return horario;</span>
     }
 
     public void setHorario(String horario) {
@@ -132,23 +132,23 @@ public class Cita {
 <span class="nc" id="L132">    }</span>
 
     public Integer getEstado() {
-<span class="fc" id="L135">        return estado;</span>
+<span class="nc" id="L135">        return estado;</span>
     }
 
     public void setEstado(Integer estado) {
-<span class="fc" id="L139">        this.estado = estado;</span>
-<span class="fc" id="L140">    }</span>
+<span class="nc" id="L139">        this.estado = estado;</span>
+<span class="nc" id="L140">    }</span>
 
     public Double getCosto() {
-<span class="fc" id="L143">        return costo;</span>
+<span class="nc" id="L143">        return costo;</span>
     }
 
     public void setCosto(Double costo) {
-<span class="fc" id="L147">        this.costo = costo;</span>
-<span class="fc" id="L148">    }</span>
+<span class="nc" id="L147">        this.costo = costo;</span>
+<span class="nc" id="L148">    }</span>
 
     public Integer getMetrosCuadrados() {
-<span class="fc" id="L151">        return metrosCuadrados;</span>
+<span class="nc" id="L151">        return metrosCuadrados;</span>
     }
 
     public void setMetrosCuadrados(Integer metrosCuadrados) {

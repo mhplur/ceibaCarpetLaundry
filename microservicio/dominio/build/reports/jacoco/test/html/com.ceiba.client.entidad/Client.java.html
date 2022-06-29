@@ -12,31 +12,31 @@ public class Client {
 
     private String direccion;
 
-<span class="fc" id="L15">    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {</span>
-<span class="fc" id="L16">        this.id = id;</span>
-<span class="fc" id="L17">        this.identificacionPersonal = identificacionPersonal;</span>
-<span class="fc" id="L18">        this.nombre = nombre;</span>
-<span class="fc" id="L19">        this.direccion = direccion;</span>
-<span class="fc" id="L20">    }</span>
+<span class="nc" id="L15">    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {</span>
+<span class="nc" id="L16">        this.id = id;</span>
+<span class="nc" id="L17">        this.identificacionPersonal = identificacionPersonal;</span>
+<span class="nc" id="L18">        this.nombre = nombre;</span>
+<span class="nc" id="L19">        this.direccion = direccion;</span>
+<span class="nc" id="L20">    }</span>
 
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
-<span class="fc" id="L23">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
-<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
-<span class="fc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
-<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
-<span class="fc" id="L27">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
+<span class="nc" id="L23">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
+<span class="nc" id="L24">        ValidadorArgumento.validarObligatorio(identificacionPersonal, &quot;Identificacion del cliente es requerida&quot;);</span>
+<span class="nc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del Cliente es requerido&quot;);</span>
+<span class="nc" id="L26">        ValidadorArgumento.validarObligatorio(direccion, &quot;Direccion del cliente es requerido&quot;);</span>
+<span class="nc" id="L27">        return new Client(id, identificacionPersonal, nombre, direccion);</span>
     }
 
     public Long getId() {
-<span class="fc" id="L31">        return id;</span>
+<span class="nc" id="L31">        return id;</span>
     }
 
     public String getIdentificacionPersonal() {
-<span class="fc" id="L35">        return identificacionPersonal;</span>
+<span class="nc" id="L35">        return identificacionPersonal;</span>
     }
 
     public String getNombre() {
-<span class="fc" id="L39">        return nombre;</span>
+<span class="nc" id="L39">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
@@ -44,7 +44,7 @@ public class Client {
 <span class="nc" id="L44">    }</span>
 
     public String getDireccion() {
-<span class="fc" id="L47">        return direccion;</span>
+<span class="nc" id="L47">        return direccion;</span>
     }
 
 }

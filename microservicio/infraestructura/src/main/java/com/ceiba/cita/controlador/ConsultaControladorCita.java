@@ -1,13 +1,15 @@
 package com.ceiba.cita.controlador;
 
 import com.ceiba.cita.consulta.ManejadorConsultaCitasPorId;
+import com.ceiba.cita.consulta.ManejadorConsultarCitas;
 import com.ceiba.cita.modelo.dto.CitaResumenDto;
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cita.consulta.ManejadorConsultarCitas;
-import com.ceiba.tarifa.entidad.Tarifa;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
