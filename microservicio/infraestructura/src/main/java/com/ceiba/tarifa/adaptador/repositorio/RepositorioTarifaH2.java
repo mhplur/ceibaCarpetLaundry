@@ -16,10 +16,10 @@ public class RepositorioTarifaH2 implements RepositorioTarifa {
     private final MapeoTarifa mapeoTarifa;
 
     @SqlStatement(namespace = "tarifa", value = "obtenerporcodigo")
-    private String sqlObtenerPorCodigo;
+    private static String sqlObtenerPorCodigo;
 
     @SqlStatement(namespace = "tarifa", value = "obtenerporid")
-    private String sqlObtenerPorId;
+    private static String sqlObtenerPorId;
 
     public RepositorioTarifaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoTarifa mapeoTarifa) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;

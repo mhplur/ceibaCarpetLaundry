@@ -19,15 +19,15 @@ public class RepositorioClientH2 implements RepositorioClient {
 
     @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenertodas")
-    private String sqlObtenerTodas;
+    private static String sqlObtenerTodas;
 
     @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenerporidentificacionpersonal")
-    private String sqlObtenerPorIdentificacionPersonal;
+    private static String sqlObtenerPorIdentificacionPersonal;
 
     @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenerporid")
-    private String sqlObtenerPorId;
+    private static String sqlObtenerPorId;
 
     public RepositorioClientH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoClient mapeoClient) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
