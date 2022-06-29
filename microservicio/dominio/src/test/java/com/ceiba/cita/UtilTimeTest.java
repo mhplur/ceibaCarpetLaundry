@@ -17,12 +17,12 @@ public class UtilTimeTest {
     @Test
     void deberiaSerVerdaderoPorEstarDentroDelRango() {
         boolean valorCondicion = UtilTime.checkAllRangeTime(LocalTime.parse("08:00:00"));
-        Assertions.assertEquals(valorCondicion, true);
+        Assertions.assertEquals(true, valorCondicion);
     }
 
     @Test
     void deberiaSerFalsoPorEstarFueraDelRango(){
         boolean valorCondicion = UtilTime.checkAllRangeTime(LocalTime.parse("05:00:00"));
-        Assertions.assertEquals(valorCondicion, false);
+        Assertions.assertEquals(false, valorCondicion);
     }
 }

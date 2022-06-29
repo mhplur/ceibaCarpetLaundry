@@ -99,10 +99,6 @@ public class Cita {
         return client;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
     public Tarifa getTarifa() {
         return tarifa;
     }
