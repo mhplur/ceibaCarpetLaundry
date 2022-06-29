@@ -1,7 +1,6 @@
 package com.ceiba.cita.comando.fabrica;
 
 import com.ceiba.cita.ComandoSolicitarCita;
-import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.modelo.entidad.SolicitarCita;
 import com.ceiba.client.puerto.RepositorioClient;
 import com.ceiba.tarifa.puerto.RepositorioTarifa;

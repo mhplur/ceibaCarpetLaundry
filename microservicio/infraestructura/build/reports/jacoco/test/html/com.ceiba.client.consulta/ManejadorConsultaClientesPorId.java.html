@@ -4,19 +4,17 @@ import com.ceiba.client.entidad.Client;
 import com.ceiba.client.puerto.RepositorioClient;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 public class ManejadorConsultaClientesPorId {
 
     private final RepositorioClient repositorioClient;
 
-<span class="fc" id="L14">    public ManejadorConsultaClientesPorId(RepositorioClient repositorioClient){</span>
-<span class="fc" id="L15">        this.repositorioClient = repositorioClient;</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L12">    public ManejadorConsultaClientesPorId(RepositorioClient repositorioClient){</span>
+<span class="fc" id="L13">        this.repositorioClient = repositorioClient;</span>
+<span class="fc" id="L14">    }</span>
 
     public Client ejecutar(Long id){
-<span class="fc" id="L19">        return repositorioClient.obtenerPorId(id);</span>
+<span class="fc" id="L17">        return repositorioClient.obtenerPorId(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

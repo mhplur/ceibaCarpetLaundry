@@ -4,8 +4,6 @@ import com.ceiba.client.entidad.Client;
 import com.ceiba.client.puerto.RepositorioClient;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 public class ManejadorConsultaClientesPorId {
 

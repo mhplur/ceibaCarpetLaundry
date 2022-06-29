@@ -3,7 +3,6 @@ package com.ceiba.cita.modelo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 

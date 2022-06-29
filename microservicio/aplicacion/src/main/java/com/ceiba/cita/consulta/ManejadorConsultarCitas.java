@@ -1,9 +1,7 @@
 package com.ceiba.cita.consulta;
 
 import com.ceiba.cita.modelo.dto.CitaResumenDto;
-import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.puerto.dao.DaoCita;
-import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

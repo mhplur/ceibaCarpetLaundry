@@ -17,45 +17,42 @@ public class RepositorioClientH2 implements RepositorioClient {
 
     private final MapeoClient mapeoClient;
 
-    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenertodas&quot;)
-    private String sqlObtenerTodas;
+    private static String sqlObtenerTodas;
 
-    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenerporidentificacionpersonal&quot;)
-    private String sqlObtenerPorIdentificacionPersonal;
+    private static String sqlObtenerPorIdentificacionPersonal;
 
-    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;client&quot;, value = &quot;obtenerporid&quot;)
-    private String sqlObtenerPorId;
+    private static String sqlObtenerPorId;
 
-<span class="fc" id="L32">    public RepositorioClientH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoClient mapeoClient) {</span>
-<span class="fc" id="L33">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L34">        this.mapeoClient = mapeoClient;</span>
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L29">    public RepositorioClientH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoClient mapeoClient) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">        this.mapeoClient = mapeoClient;</span>
+<span class="fc" id="L32">    }</span>
 
     @Override
     public List&lt;Client&gt; obtenerTodos() {
-<span class="fc" id="L39">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L40">                .query(sqlObtenerTodas, mapeoClient);</span>
+<span class="fc" id="L36">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L37">                .query(sqlObtenerTodas, mapeoClient);</span>
     }
 
     @Override
     public Client obtenerPorIdentificacionPersonal(String identificacionPersonal) {
-<span class="fc" id="L45">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L46">        paramSource.addValue(&quot;identificacionPersonal&quot;, identificacionPersonal);</span>
+<span class="fc" id="L42">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L43">        paramSource.addValue(&quot;identificacionPersonal&quot;, identificacionPersonal);</span>
 
-<span class="fc" id="L48">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L49">                .queryForObject(sqlObtenerPorIdentificacionPersonal, paramSource, mapeoClient));</span>
+<span class="fc" id="L45">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L46">                .queryForObject(sqlObtenerPorIdentificacionPersonal, paramSource, mapeoClient));</span>
     }
 
     @Override
     public Client obtenerPorId(Long id) {
-<span class="fc" id="L54">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L55">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L51">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L52">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="fc" id="L57">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L58">                .queryForObject(sqlObtenerPorId, paramSource, mapeoClient));</span>
+<span class="fc" id="L54">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L55">                .queryForObject(sqlObtenerPorId, paramSource, mapeoClient));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,6 +1,5 @@
 package com.ceiba.cita.adaptador.repositorio;
 
-import com.ceiba.cita.modelo.dto.CitaResumenDto;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
@@ -17,15 +16,13 @@ public class RepositorioCitaH2 implements RepositorioCita {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     private final MapeoCita mapeoCita;
-    @SuppressWarnings("squid:S3749")
+
     @SqlStatement(namespace = "cita", value = "crear")
     private static String sqlCrear;
 
-    @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "cita", value = "actualizarestado")
     private static String sqlActualizarEstado;
 
-    @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "cita", value = "obtenertodasactivas")
     private static String sqlObtenerTodasActivas;
 
