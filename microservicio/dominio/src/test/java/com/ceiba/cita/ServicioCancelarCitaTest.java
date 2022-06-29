@@ -16,9 +16,9 @@ public class ServicioCancelarCitaTest {
         Mockito.when(repositorioCita.guardar(Mockito.any())).thenReturn(1l);
 
         var cita = new CitaTestDataBuilder().conCitaPorDefecto().reconstruir();
-        var servicioAnular = new ServicioCancelar(repositorioCita);
+        var servicioCancelar = new ServicioCancelar(repositorioCita);
 
-        servicioAnular.ejecutar(cita);
+        servicioCancelar.ejecutar(cita);
 
         ArgumentCaptor<Cita> captorCita = ArgumentCaptor.forClass(Cita.class);
         Mockito.verify(repositorioCita, Mockito.times(1)).actualizarEstado(captorCita.capture());

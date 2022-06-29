@@ -203,4 +203,23 @@ public class CitaTest {
                 ExcepcionValorObligatorio.class,
                 "Numero de metros cuadrados es requerido");
     }
+
+    @Test
+    void deberiaCancelarCitaExitosamente() {
+        Client client = new Client(1l, "001", "MILTON PAREDES", "QUITO");
+        Tarifa tarifa = new Tarifa(1l, "VAPOR O AGUA CALIENTE", "W001", 24, 15, 1);
+        var cita = new CitaTestDataBuilder()
+                .conId(1l)
+                .conClient(client)
+                .conTarifa(tarifa)
+                .conFechaCita(LocalDate.parse("2022-09-17"))
+                .conHoraCita(LocalTime.parse("08:00:00"))
+                .conHorario("DIA")
+                .conEstado(1)
+                .conCosto(15.0)
+                .conMetrosCuadrados(1).reconstruir();
+
+        cita.cancelar();
+        Assertions.assertEquals(0, cita.getEstado());
+    }
 }

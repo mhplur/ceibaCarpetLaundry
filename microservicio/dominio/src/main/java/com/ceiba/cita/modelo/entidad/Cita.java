@@ -110,10 +110,6 @@ public class Cita {
         return horario;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-
     public Integer getEstado() {
         return estado;
     }
