@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.client.ClientTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-29T16:58:45" hostname="DESKTOP-SJD26V0" time="0.024">
+<testsuite name="com.ceiba.client.ClientTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-29T17:19:38" hostname="DESKTOP-SJD26V0" time="0.02">
   <properties/>
-  <testcase name="reconstruirClientSinIdentificacionPersonalDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.002"/>
-  <testcase name="reconstruirClientSinNombreDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.004"/>
-  <testcase name="reconstruirClientSinDireccionDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.004"/>
+  <testcase name="reconstruirClientSinIdentificacionPersonalDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.004"/>
+  <testcase name="reconstruirClientSinNombreDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.003"/>
+  <testcase name="reconstruirClientSinDireccionDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.002"/>
   <testcase name="reconstruirClientSinIdDeberiaLanzarError()" classname="com.ceiba.client.ClientTest" time="0.003"/>
-  <testcase name="deberiaCrearClientExitoso()" classname="com.ceiba.client.ClientTest" time="0.002"/>
+  <testcase name="deberiaCrearClientExitoso()" classname="com.ceiba.client.ClientTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
