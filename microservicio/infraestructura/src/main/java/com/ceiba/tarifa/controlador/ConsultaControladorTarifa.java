@@ -19,7 +19,7 @@ public final class ConsultaControladorTarifa {
 
     private final ManejadorConsultaTarifaPorId manejadorConsultaTarifaPorId;
 
-    private ConsultaControladorTarifa(ManejadorConsultaTarifaPorCodigo manejadorConsultaTarifaPorCodigo,
+    public ConsultaControladorTarifa(ManejadorConsultaTarifaPorCodigo manejadorConsultaTarifaPorCodigo,
                                       ManejadorConsultaTarifaPorId manejadorConsultaTarifaPorId) {
         this.manejadorConsultaTarifaPorCodigo = manejadorConsultaTarifaPorCodigo;
         this.manejadorConsultaTarifaPorId = manejadorConsultaTarifaPorId;

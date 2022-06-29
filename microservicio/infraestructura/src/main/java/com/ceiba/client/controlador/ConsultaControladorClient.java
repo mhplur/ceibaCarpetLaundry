@@ -22,7 +22,7 @@ public final class ConsultaControladorClient {
 
     private final ManejadorConsultaClientesPorId manejadorConsultaClientesPorId;
 
-    private ConsultaControladorClient(ManejadorConsultaClientes manejadorConsultaClientes,
+    public ConsultaControladorClient(ManejadorConsultaClientes manejadorConsultaClientes,
                                       ManejadorConsultaClientesPorIdentificacionPersonal manejadorConsultaClientesPorIdentificacionPersonal,
                                       ManejadorConsultaClientesPorId manejadorConsultaClientesPorId) {
         this.manejadorConsultaClientes = manejadorConsultaClientes;
