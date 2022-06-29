@@ -17,63 +17,66 @@ public class RepositorioCitaH2 implements RepositorioCita {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     private final MapeoCita mapeoCita;
-
+    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;cita&quot;, value = &quot;crear&quot;)
     private static String sqlCrear;
 
+    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;cita&quot;, value = &quot;actualizarestado&quot;)
     private static String sqlActualizarEstado;
 
+    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;cita&quot;, value = &quot;obtenertodasactivas&quot;)
     private static String sqlObtenerTodasActivas;
 
+    @SuppressWarnings(&quot;squid:S3749&quot;)
     @SqlStatement(namespace = &quot;cita&quot;, value = &quot;obtenerporid&quot;)
     private static String sqlObtenerPorId;
 
 
     public RepositorioCitaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate,
-<span class="fc" id="L35">                             MapeoCita mapeoCita) {</span>
-<span class="fc" id="L36">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L37">        this.mapeoCita = mapeoCita;</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L38">                             MapeoCita mapeoCita) {</span>
+<span class="fc" id="L39">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L40">        this.mapeoCita = mapeoCita;</span>
+<span class="fc" id="L41">    }</span>
 
 
     @Override
     public List&lt;Cita&gt; obtenerTodasActivas() {
-<span class="fc" id="L43">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L44">                .query(sqlObtenerTodasActivas, mapeoCita);</span>
+<span class="fc" id="L46">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L47">                .query(sqlObtenerTodasActivas, mapeoCita);</span>
     }
 
     @Override
     public Long guardar(Cita cita) {
-<span class="fc" id="L49">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L50">        paramSource.addValue(&quot;id_client&quot;, cita.getClient().getId());</span>
-<span class="fc" id="L51">        paramSource.addValue(&quot;id_tarifa&quot;, cita.getTarifa().getId());</span>
-<span class="fc" id="L52">        paramSource.addValue(&quot;fecha_cita&quot;, cita.getFechaCita());</span>
-<span class="fc" id="L53">        paramSource.addValue(&quot;hora_cita&quot;, cita.getHoraCita());</span>
-<span class="fc" id="L54">        paramSource.addValue(&quot;horario&quot;, cita.getHorario());</span>
-<span class="fc" id="L55">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
-<span class="fc" id="L56">        paramSource.addValue(&quot;costo&quot;, cita.getCosto());</span>
-<span class="fc" id="L57">        paramSource.addValue(&quot;metros_cuadrados&quot;, cita.getMetrosCuadrados());</span>
-<span class="fc" id="L58">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="fc" id="L52">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L53">        paramSource.addValue(&quot;id_client&quot;, cita.getClient().getId());</span>
+<span class="fc" id="L54">        paramSource.addValue(&quot;id_tarifa&quot;, cita.getTarifa().getId());</span>
+<span class="fc" id="L55">        paramSource.addValue(&quot;fecha_cita&quot;, cita.getFechaCita());</span>
+<span class="fc" id="L56">        paramSource.addValue(&quot;hora_cita&quot;, cita.getHoraCita());</span>
+<span class="fc" id="L57">        paramSource.addValue(&quot;horario&quot;, cita.getHorario());</span>
+<span class="fc" id="L58">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
+<span class="fc" id="L59">        paramSource.addValue(&quot;costo&quot;, cita.getCosto());</span>
+<span class="fc" id="L60">        paramSource.addValue(&quot;metros_cuadrados&quot;, cita.getMetrosCuadrados());</span>
+<span class="fc" id="L61">        return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
     }
 
 
     @Override
     public Cita obtenerPorId(Long id) {
-<span class="fc" id="L64">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L65">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L67">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L68">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="fc" id="L67">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L68">                .queryForObject(sqlObtenerPorId, paramSource, mapeoCita));</span>
+<span class="fc" id="L70">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L71">                .queryForObject(sqlObtenerPorId, paramSource, mapeoCita));</span>
     }
 
     @Override
     public void actualizarEstado(Cita cita) {
-<span class="fc" id="L73">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L74">        paramSource.addValue(&quot;id&quot;, cita.getId());</span>
-<span class="fc" id="L75">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
-<span class="fc" id="L76">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
-<span class="fc" id="L77">    }</span>
+<span class="fc" id="L76">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L77">        paramSource.addValue(&quot;id&quot;, cita.getId());</span>
+<span class="fc" id="L78">        paramSource.addValue(&quot;estado&quot;, cita.getEstado());</span>
+<span class="fc" id="L79">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
+<span class="fc" id="L80">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

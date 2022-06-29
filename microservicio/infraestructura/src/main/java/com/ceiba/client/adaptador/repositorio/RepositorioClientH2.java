@@ -17,12 +17,15 @@ public class RepositorioClientH2 implements RepositorioClient {
 
     private final MapeoClient mapeoClient;
 
+    @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenertodas")
     private String sqlObtenerTodas;
 
+    @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenerporidentificacionpersonal")
     private String sqlObtenerPorIdentificacionPersonal;
 
+    @SuppressWarnings("squid:S3749")
     @SqlStatement(namespace = "client", value = "obtenerporid")
     private String sqlObtenerPorId;
 
