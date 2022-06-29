@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.cita.ResumenFacturaDtoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-29T22:55:32" hostname="DESKTOP-SJD26V0" time="0.177">
+  <properties/>
+  <testcase name="deberiaConstruirSatisfactoriamente()" classname="com.ceiba.cita.ResumenFacturaDtoTest" time="0.177"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

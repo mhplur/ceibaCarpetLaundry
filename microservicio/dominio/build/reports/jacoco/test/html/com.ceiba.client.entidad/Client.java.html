@@ -12,12 +12,12 @@ public class Client {
 
     private String direccion;
 
-<span class="fc" id="L15">    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {</span>
-<span class="fc" id="L16">        this.id = id;</span>
-<span class="fc" id="L17">        this.identificacionPersonal = identificacionPersonal;</span>
-<span class="fc" id="L18">        this.nombre = nombre;</span>
-<span class="fc" id="L19">        this.direccion = direccion;</span>
-<span class="fc" id="L20">    }</span>
+<span class="nc" id="L15">    public Client(Long id, String identificacionPersonal, String nombre, String direccion) {</span>
+<span class="nc" id="L16">        this.id = id;</span>
+<span class="nc" id="L17">        this.identificacionPersonal = identificacionPersonal;</span>
+<span class="nc" id="L18">        this.nombre = nombre;</span>
+<span class="nc" id="L19">        this.direccion = direccion;</span>
+<span class="nc" id="L20">    }</span>
 
     public static Client reconstruir(Long id, String identificacionPersonal, String nombre, String direccion) {
 <span class="nc" id="L23">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerida&quot;);</span>
