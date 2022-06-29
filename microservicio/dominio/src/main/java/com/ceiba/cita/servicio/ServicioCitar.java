@@ -33,7 +33,7 @@ public class ServicioCitar {
         List<Cita> citas = repositorioCita.obtenerTodasActivas();
         boolean existeCitaPrevia = false;
         for (Cita cita : citas) {
-            if (cita.getClient().getId() == solicitarCita.getCliente().getId()) {
+            if (cita.getClient().getId().equals(solicitarCita.getCliente().getId())) {
                 existeCitaPrevia = true;
                 break;
             }
@@ -65,7 +65,7 @@ public class ServicioCitar {
         if (horario.equals(CONS_HORARIO_DIA)) {
             return Double.valueOf(squareMeterRate);
         } else if (horario.equals(CONS_HORARIO_NOCHE)) {
-            return Double.valueOf(squareMeterRate + HorarioPrecio.NOCHE.getCostoAdicional());
+            return Double.valueOf(squareMeterRate + Double.valueOf(HorarioPrecio.NOCHE.getCostoAdicional()));
         }
         return 0.0;
     }
